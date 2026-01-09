@@ -3,32 +3,29 @@
 Proyecto para la UT5
 
 
-
-\## Descripción del proyecto
+## Descripción del proyecto
 
 LigaVolei es un proyecto creado como parte de la Unidad UT5 de la materia de Lenguajes de Marca. Está compuesto por 3 integrantes.
 
 
+## Integrantes del proyecto
 
-\## Integrantes del proyecto
+* Integrante 1: Maksim Uncu
 
-\* Integrante 1: Maksim Uncu
+* Integrante 2: Leidy Peñaranda 
 
-\* Integrante 2: Leidy Peñaranda 
-
-\* Integrante 3: Iker Zadra 
-
+* Integrante 3: Iker Zadra 
 
 
-\## Gestión de tareas
+## Gestión de tareas
 
 El progreso del proyecto se hace mediante un tablero Kanban en Github, llamado "Desarrollo", que tiene las siguientes columnas:
 
-\- \*\*To Do\*\*
+- **To Do**
 
-\- \*\*In Progress\*\*
+- **In Progress**
 
-\- \*\*Done\*\*
+- **Done**
 
 
 
@@ -36,9 +33,9 @@ El progreso del proyecto se hace mediante un tablero Kanban en Github, llamado "
 
 
 
-\## Como contribuir
+## Como contribuir
 
-1\. Clona el repositorio:
+1. Clona el repositorio:
 
 ```bash
 
@@ -50,7 +47,7 @@ cd G3-LigaVolei
 
 
 
-2\. Actualízate a la rama main y crea una nueva rama que soluciona el issue:
+2. Actualízate a la rama main:
 
 ```bash
 
@@ -58,13 +55,11 @@ git checkout main
 
 git pull origin main
 
-git checkout -b issue-1-fix     # Donde cambias 1 al número del issue correspondiente
-
 ```
 
 
 
-3\. Añade tus cambios y haz un commit descriptivo:
+3. Añade tus cambios y haz un commit descriptivo:
 
 ```bash
 
@@ -76,19 +71,15 @@ git commit -m "Tu mensaje"
 
 
 
-4\. Empuja la rama y abre el pull request:
+4. Verifica que todo esté bien y empuja el commit:
 
 ```bash
 
-git push -u origin issue-1-fix
+git push 
 
 ```
 
 
 
-5\. Abre el pull request en github.
 
-
-
-6\. Discute con tus compañeros el cambio y aceptadlo una vez estéis de acuerdo.
 
