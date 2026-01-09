@@ -41,7 +41,7 @@ El progreso del proyecto se hace mediante un tablero Kanban en Github, llamado "
 
 git clone https://github.com/muncu-bit/LigaVolei.git
 
-cd G3-LigaVolei
+cd LigaVolei
 
 ```
 
