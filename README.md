@@ -19,14 +19,7 @@ LigaVolei es un proyecto creado como parte de la Unidad UT5 de la materia de Len
 
 ## Gestión de tareas
 
-El progreso del proyecto se hace mediante un tablero Kanban en Github, llamado "Desarrollo", que tiene las siguientes columnas:
-
-- **To Do**
-
-- **In Progress**
-
-- **Done**
-
+El progreso del proyecto se hace mediante la plataforma Miro y se discuten los cambios y decisiones entre el equipo.
 
 
 ---
@@ -41,7 +34,7 @@ El progreso del proyecto se hace mediante un tablero Kanban en Github, llamado "
 
 git clone https://github.com/muncu-bit/LigaVolei.git
 
-cd G3-LigaVolei
+cd LigaVolei
 
 ```
 
@@ -50,8 +43,6 @@ cd G3-LigaVolei
 2. Actualízate a la rama main:
 
 ```bash
-
-git checkout main
 
 git pull origin main
 
