@@ -51,8 +51,6 @@ cd G3-LigaVolei
 
 ```bash
 
-git checkout main
-
 git pull origin main
 
 ```
