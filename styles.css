@@ -20,6 +20,7 @@ img{
 
 h3{
     color: #1d3dc7;
+    margin: 0%;
 }
 
 h1{
@@ -186,4 +187,14 @@ th img{
     width: 5%;
     height: 5%;
     border: 1px solid black;
+}
+
+.tabla{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor p{
+    margin: 0%;
 }
