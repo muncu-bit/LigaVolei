@@ -79,6 +79,8 @@ a:hover {
     text-decoration: underline; 
 }
 
+/*CSS para el cabezal saludo de la pagina index,
+se puede reutilizar para el menu hamburgesa*/
 .saludo{
     display: flex;
     align-items: center;
@@ -97,6 +99,7 @@ a:hover {
     height: 50px;
 }
 
+/*CSS para los titulos del menu admin*/
 .index h1{
     margin: 0;
 }
@@ -106,6 +109,7 @@ a:hover {
     text-align: center;
 }
 
+/*CSS boton mediano*/
 .medio{
     padding: 8px;
     border-radius: 5px;
@@ -120,6 +124,7 @@ a:hover {
     justify-content: center;
 }
 
+/*CSS boton para salir de la pagina*/
 .salir{
     background-color: red;
     padding: 8px;
@@ -127,7 +132,7 @@ a:hover {
     margin-top: 2px;
     width: 50%;
 }
-
+/*CCS para iconos de las tablas*/
 .icono{
     width: 30px;
     height: 30px;
@@ -138,6 +143,7 @@ a:hover {
     height: 70px;
 }
 
+/*CSS para que todas las tablas sean iguales*/
 table{
     background-color: lightgray;
     border: 1px solid black;
@@ -145,6 +151,13 @@ table{
     width: 80%;
 }
 
+.tabla{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*CSS para las tablas con 3 datos*/
 .tabla th:nth-child(1) {
   border: 1px solid black;
   width: 5%;
@@ -158,10 +171,12 @@ table{
     margin: 0%;
 }
 
+/*CSS para las imagenes de las tablas*/
 th img{
     margin: 0%;
 }
 
+/*CSS para tablas con 2 datos*/
 .tabla2 {
     margin-left: auto;
     margin-right: auto;
@@ -171,10 +186,4 @@ th img{
     width: 5%;
     height: 5%;
     border: 1px solid black;
-}
-
-.tabla{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
