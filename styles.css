@@ -104,3 +104,25 @@ a:hover {
     margin: 5px 0px 0px 0px;
     text-align: center;
 }
+
+.medio{
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 2px;
+    width: 50%;
+}
+
+.index a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.salir{
+    background-color: red;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 2px;
+    width: 50%;
+}
