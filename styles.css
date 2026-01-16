@@ -144,25 +144,36 @@ table{
     width: 80%;
 }
 
-th:nth-child(1) {
+.tabla th:nth-child(1) {
   border: 1px solid black;
   width: 5%;
   height: 5%;
 }
 
-th:nth-child(2), th:nth-child(3) {
+.tabla th:nth-child(2), th:nth-child(3) {
     border: none; 
     width: 5%;
     height: 5%;
+    margin: 0%;
 }
 
 th img{
-    margin: 0px ;
+    margin: 0%;
+}
+
+.tabla2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabla2 th{
+    width: 5%;
+    height: 5%;
+    border: 1px solid black;
 }
 
 .tabla{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
