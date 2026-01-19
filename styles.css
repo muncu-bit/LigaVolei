@@ -198,3 +198,7 @@ th img{
 .contenedor p{
     margin: 0%;
 }
+
+#email, #password{
+    margin-bottom: 5%;
+}
