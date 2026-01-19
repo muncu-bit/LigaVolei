@@ -199,6 +199,6 @@ th img{
     margin: 0%;
 }
 
-#email, #password{
-    margin-bottom: 5%;
+.input{
+    margin-bottom: 1.5vh;
 }
