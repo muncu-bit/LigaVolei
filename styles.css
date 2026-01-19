@@ -25,6 +25,7 @@ h3{
 
 h1{
     text-align: center;
+    margin: 5px;
 }
 
 p{
@@ -133,6 +134,26 @@ se puede reutilizar para el menu hamburgesa*/
     margin-top: 2px;
     width: 50%;
 }
+
+/*CSS boton tabla eliminar*/
+.botTabla{
+    background-color: rgb(189, 57, 40);
+}
+
+.botTabla:hover{
+    background-color: rgb(255, 30, 0);
+}
+
+/*CSS boton tabla aceptar*/
+
+.botAc{
+    background-color: rgb(60, 192, 71);
+}
+
+.botAc:hover{
+    background-color: rgb(0, 255, 0);
+}
+
 /*CCS para iconos de las tablas*/
 .icono{
     width: 30px;
