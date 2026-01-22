@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f2f4f8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contenedor-principal {
+    width: 100%;
+    max-width: 1300px;
+    height:100vh;
+    max-height:750px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+}
+
+.caja {
+    width: 100%;
+    max-width: 900px;
+    height: 100vh;
+    max-height: 700px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2, h2 {
+    text-align: center;
+    color: blue;
+    font-size: 18px;
+}
+
+h3 {
+    color: gray;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e6ecff;
+    border: 2px solid blue;
+
+}
+
+.perfil img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.formacion {
+    display: grid;
+    grid-template-columns: repeat (3,1fr);
+    gap: 10px;
+}
+
+
+.caja-imagen {
+    background-color: #f1f5ff;
+    border:1px solid #d6e0ff;
+    border-radius:8px;
+    padding:5 px;
+}
+
+.caja-imagen img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.jugadores, .lista {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.jugador, .fila {
+
+    display: flex;
+    gap: 12px;
+    background-color: #f8f9fb;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.fila {
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.fila:hover {
+    background-color: #f1f5ff;
+}
+
+.jugador-img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.info-jugador {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.jugador {
+    font-weight: bold;
+    color: #2f80ed;
+}
+
+.jugador-desc {
+    font-size: 13px;
+    color: gray;
+    line-height: 1.4;
+}
+
+.nombre-liga {
+    font-weight: bold;
+    color: gray;
+
+}
+
+.cont {
+    flex: 1;
+    background-color: #f8f9fb;
+    border:1px solid #e0e0e0;
+    border-radius: 10px;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+
+}
+
+.cont label {
+    font-size: 13px;
+    font-weight: bold;
+    color: gray;
+}
+
+.cont input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid beige;
+
+}
+
+.image-box {
+    width: 100%;
+    height: 120px;
+    border: 2px dashed #c7d2fe;
+    border-radius: 8px;
+    background-color: #eef2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: blue;
+}
+
+.radios {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.radios label {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.radios input {
+    margin-right: 6px;
+}
+
+.buttons {
+    display:flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+button, .btn {
+    flex: 1px;
+    padding: 12px;
+    border-radius: 8px;
+
+}
+
+.barra-superior {
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+
+
+
+
+.contenedor-tabla {
+    flex: 1;
+    overflow-y: auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+
+table th {
+    background-color: #2f80ed;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+table th.ranking,
+table td:first-child {
+    text-align: left;
+    padding-left: 15px;
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+.boton-de-salir {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: blue;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.siguiente:hover, .btn-create:hover {
+    background-color: blue;
+}
+
+.salir, .boton-cancelar {
+    background-color: #e6ecff;
+    color: gray;
+}
+
+.boton-cancelar:hover {
+    background-color: #c7d2fe;
+}
+
+.boton-volver {
+    width: 45px;
+    height: 45px;
+    background-color: #2f80ed;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer
+}
+
+/* MENU HAMBURGUESA */
+
+#menu-check {
+  display: none;
+}
+
+/* 2. Botón hamburguesa */
+.menu-icono {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 26px;
+  color: #2f80ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3. Menú oculto */
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.nav-menu ul {
+  list-style: none;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-menu li a:hover {
+  background-color: #f2f4f8;
+}
+
+/* 4. Mostrar menú cuando está marcado */
+#menu-check:checked + .menu-icono + .nav-menu {
+  display: block;
+}
