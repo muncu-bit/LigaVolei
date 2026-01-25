@@ -4,62 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Liga</title>
-    <link rel="stylesheet" href="Styyyless.css">
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
+        <div class="contenedor-equipo">
+    <div class="contenedor">
+     <div class="form-container">
+    
+        <div class="saludo">
 
-    <div class="caja">
-        <div class="header">
-        
-        <input type="checkbox" id="menu-check">
+            <input type="checkbox" id="menu-check">
 
-<label for="menu-check" class="menu-icono">☰</label>
+            <label for="menu-check" class="menu-icono">☰</label>
 
-<nav class="nav-menu">
-  <ul>
-    <li><a href="#">Inicio</a></li>
-    <li><a href="#">Servicios</a></li>
-    <li><a href="#">Contacto</a></li>
-  </ul>
-</nav>  
-    </div>
+            <nav class="nav-menu">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Ligas</a></li>
+            <li><a href="#">salir</a></li>
+        </ul>
+            </nav>
 
-    <h2>Editar LIGA</h2>
 
-    <div class="cont">
-
-        <label>NombreLiga</label>
-        <input type="text" placeholder="Ingresa el nombre">
-        
-        <label>Nuevo Nombre Liga</label>
-        <input type="text" placeholder="Ingresa el nuevo nombre">
-
-        <label>Descripción</label>
-        <input type="text" placeholder="Ingresa la descripción">
-
-        <label>Foto de Liga</label>
-        <div class="image-box">
-<span></span>
         </div>
 
-    <input type="file" id="upload" accept="image/*" style="display: none;">
+        <h1>EDITAR Liga</h1>
 
-    <label>Elige estadio</label>
-    <div class="radios">
-        <label><input type="radio" name="estadio"> Estadio 1</label>
-         <label><input type="radio" name="estadio"> Estadio 2</label>
-          <label><input type="radio" name="estadio"> Estadio 3</label>
+        <div class="input">
+
+            <label for="nombre-actual">Nombre actual de la Liga</label>
+            <input type="text" id="nombre-actual" placeholder="Ingresa el nombre actual">
+        </div>
+
+         <div class="input">
+
+            <label for="nombre-nuevo">Nuevo nombre de la Liga</label>
+            <input type="text" id="nombre-nuevo" placeholder="Ingresa el nombre Nuevo">
+        </div>
+
+
+         <div class="input">
+
+            <label for="descripción">Descripción</label>
+            <textarea id="descripción" placeholder="Ingresa la descripción"></textarea>
+
+        </div>
+
+         <div class="input">
+
+            <label for="foto">Foto de la Liga</label>
+            <input type="file" id="foto" accept="image/*" >
+
+        </div>
+
+        <div class="buttons-group">
+
+            <button>GUARDAR CAMBIOS</button>
+             <a href="index-admin.html">
+        <button class="salir">CANCELAR</button>
+            </a>
+        </div>
+
+
+     </div>
+
     </div>
-    <div class="buttons">
-        <button class="btn btn-create">CREAR</button>
-        <button class="btn boton-cancelar">CANCELAR</button>
 
-    </div>
-    </div>
+    </body>
+</html>
 
-
-
-    </div>
     
+
+
+
+
+
+
+        
+        </div>
+     </div>
+    </div>
 </body>
 </html>
