@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Editar Jornadas</title>
+</head>
+
+<body>
+  <header class="header" style="padding:12px;">
+    <div class="saludo" style="gap:8px; align-items:center;">
+      <img src="imagenes/pelota-volei.png" alt="Logo" style="width:36px;height:36px;" />
+      <div>
+        <h1 style="font-size:18px;margin:0;">Editar Jornadas</h1>
+        <h2 style="font-size:12px;margin:2px 0 0 0;">Vóley</h2>
+      </div>
+      <input id="menu-check" type="checkbox" />
+      <label for="menu-check" class="menu-icono">☰</label>
+      <nav class="nav-menu" aria-label="Menú">
+        <ul>
+          <li><a href="../index-admin.html">Inicio</a></li>
+          <li><a href="../Ligas/VerLigaVolley.html">Liga</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding:12px; max-width:420px; margin:0 auto;">
+    <a href="#formJornada" class="btn">Nueva jornada</a>
+
+    <section id="lista" style="margin-top:12px;">
+      <article class="card">
+        <div class="card-head">
+          <strong>Jornada 1</strong>
+          <span class="status">Programada</span>
+        </div>
+        <label>Fecha
+          <input type="date" value="2025-03-01" />
+        </label>
+        <label>Sede
+          <input type="text" value="Valor 1" />
+        </label>
+        <details>
+          <summary>Partidos</summary>
+          <ul>
+            <li>Club A vs Club B</li>
+            <li>Club C vs Club D</li>
+          </ul>
+        </details>
+        <div class="actions">
+          <a href="#formJornada" class="btn small">Editar</a>
+          <form action="#" method="post" style="flex:1;">
+            <button type="submit">Eliminar</button>
+          </form>
+        </div>
+      </article>
+    </section>
+
+    <section id="formJornada" style="margin-top:16px;">
+      <form action="#" method="post" class="form-simple">
+        <label>Nombre
+          <input name="nombre" type="text" placeholder="Jornada X" />
+        </label>
+        <label>Fecha
+          <input name="fecha" type="date" />
+        </label>
+        <label>Sede
+          <input name="sede" type="text" />
+        </label>
+        <label>Partidos (una por línea)
+          <textarea name="partidos" rows="5" placeholder="Equipo A vs Equipo B"></textarea>
+        </label>
+        <div class="actions">
+          <a>Cancelar</a>
+          <button type="submit">Guardar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>
