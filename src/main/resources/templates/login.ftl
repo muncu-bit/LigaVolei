@@ -12,19 +12,23 @@
         <p>Descripción breve</p>
         <div class="login">
             <h1>Iniciar Sesión</h1>
-            <#assing >
             <form action="index-admin.html" method="GET">
                 <div class="input">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="nombre@ejemplo.com" required>
+                    <input type="email" id="email" value="${usuarioCreado.email}" required>
                 </div>
 
                 <div class="input">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" placeholder="**********" required>
+                    <input type="password" id="password" value="${usuarioCreado.contra}" required>
                 </div>
-            
-                <button type="submit">Iniciar sesión</button>
+
+            <#if ${error}>
+                <a href="/">
+            <#else>
+            <a href="/index"><button type="submit">Iniciar sesión</button></a>
+                
+            </#if>
             </form>
 
             <div class="links">
