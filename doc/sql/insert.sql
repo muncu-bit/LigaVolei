@@ -1,4 +1,4 @@
-insert into usuarios values("Admin","Admin", 1);
-insert into usuarios values("Vero","1234", 2);
-insert into usuarios values("Iker","2345",2);
-insert into usuarios values("Maksim","3456", 2);
+insert into usuarios values(null,"Admin@admin.es","Admin","Admin");
+insert into usuarios values(null,"vero@email.es","Vero","1234");
+insert into usuarios values(null,"iker@email.es","Iker","2345");
+insert into usuarios values(null,"maks@email.es","Maksim","3456");
