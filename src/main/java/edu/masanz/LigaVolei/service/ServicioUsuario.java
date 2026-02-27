@@ -14,4 +14,8 @@ public class ServicioUsuario {
         }
 
     }
+
+    public static void borrarUsuario(int id) {
+        UsuarioDao.eliminarUsuario(id);
+    }
 }
