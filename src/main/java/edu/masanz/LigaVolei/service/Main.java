@@ -1,7 +1,5 @@
 package edu.masanz.LigaVolei.service;
 
-import edu.masanz.LigaVolei.controller.NotaController;
-
 import edu.masanz.LigaVolei.database.ConnectionManager;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
@@ -28,7 +26,7 @@ public class Main {
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
-
+/*
         app.get("/", NotaController::servirIndice);
         app.get("/lista-notas", NotaController::servirLista);
         app.get("/nota/{id}", NotaController::servirNota);
@@ -40,7 +38,7 @@ public class Main {
         app.post("/elimina-nota/{id}", NotaController::eliminarNota);
         app.get("/error", NotaController::servirError);
 
-
+*/
     }
 
 }

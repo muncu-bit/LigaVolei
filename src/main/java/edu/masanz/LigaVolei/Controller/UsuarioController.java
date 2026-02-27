@@ -5,7 +5,7 @@ import edu.masanz.LigaVolei.service.ServicioUsuario;
 
 public class UsuarioController {
 
-    public void procesarLogin(String nombre, String contraseña) {
+    public static void procesarLogin(String nombre, String contraseña) {
         Usuariocrear usuario = ServicioUsuario.login(nombre, contraseña);
 
         if (usuario != null) {
