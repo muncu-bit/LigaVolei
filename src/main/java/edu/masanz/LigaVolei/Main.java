@@ -26,7 +26,9 @@ public class Main {
 
         app.get("/", LoginController::entrarIndex);
         app.post("/", LoginController::entrarIndex);
-        app.get("/index", LoginController::Index);
+        app.get("/index", LoginController::index);
+        app.post("/index", LoginController::index);
+
 
     }
 

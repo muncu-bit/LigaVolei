@@ -30,7 +30,7 @@ public class LoginController {
         }*/
     }
 
-    public static void Index(@NotNull Context context) {
+    public static void index(@NotNull Context context) {
         Map<String, Object> model = new HashMap<>();
         context.render("/templates/index.ftl", model);
     }
