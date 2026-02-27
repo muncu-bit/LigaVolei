@@ -26,6 +26,13 @@ public class UsuarioDao {
 
 
 
+    public static void eliminarUsuario (int id) {
+        String sql = "Delete from usuarios where id = ?";
+        Object[]params = {id};
+        ConnectionManager.ejecutarInsertSQL(sql, params);
+    }
+
+
     public static void main(String[] args) {
         ConnectionManager.conectar("voleiLiga", "prueba", "prueba123");
 
