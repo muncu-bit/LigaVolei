@@ -23,4 +23,8 @@ public class UsuarioController {
         ServicioUsuario.borrarUsuario(id);
     }
 
+    public static void agregarUsuario(String nombre, String contra) {
+        ServicioUsuario.agregarUsuario(nombre, contra);
+    }
+
 }
