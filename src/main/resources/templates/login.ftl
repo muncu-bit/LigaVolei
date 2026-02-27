@@ -3,11 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="../../src/main/resources/public/css/styles.css">
 </head>
 <body>
     <div class="contenedor">
-        <img src="/imagenes/pelota-volei.png">
+        <img src="imagenes/pelota-volei.png">
         <h3>Liga Voleibol</h3>
         <p>Descripción breve</p>
         <div class="login">

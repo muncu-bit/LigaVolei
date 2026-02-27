@@ -2,7 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/styles.css">
+=======
+    <link rel="stylesheet" href="../../src/main/resources/public/css/styles.css">
+>>>>>>> 1d48cc25526f334729494bae604682667c258f71
     <title>Inicio</title>
 </head>
 <body>
@@ -48,7 +52,11 @@
             </a>
             <br>
         </div>
+<<<<<<< HEAD
         <a href="/">
+=======
+        <a href="login.html">
+>>>>>>> 1d48cc25526f334729494bae604682667c258f71
             <button class="salir">SALIR</button>
         </a>
     </div>
