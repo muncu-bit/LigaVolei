@@ -3,6 +3,11 @@ package edu.masanz.LigaVolei.Controller;
 import edu.masanz.LigaVolei.dao.UsuarioDao;
 import edu.masanz.LigaVolei.dto.Usuariocrear;
 import edu.masanz.LigaVolei.service.ServicioUsuario;
+import io.javalin.http.Context;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class UsuarioController {
 
@@ -27,4 +32,8 @@ public class UsuarioController {
         ServicioUsuario.agregarUsuario(nombre, contra);
     }
 
+    public static void lista(@NotNull Context context) {
+        Map<String, Object> model = new HashMap<>();
+        context.render("/templates/lista-usuarios.ftl", model);
+    }
 }
