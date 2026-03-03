@@ -4,6 +4,6 @@ create table usuarios(
 	email varchar(200) unique,
 	usuario varchar(200) unique,
 	contra varchar(200) not null,
-	salt varchar(16) not null,
+	salt varchar(32) not null,
 	rol int not null
 );
