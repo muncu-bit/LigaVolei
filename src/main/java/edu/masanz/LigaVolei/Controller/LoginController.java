@@ -34,4 +34,9 @@ public class LoginController {
         Map<String, Object> model = new HashMap<>();
         context.render("/templates/index.ftl", model);
     }
+
+    public static void registro(@NotNull Context context) {
+        Map<String, Object> model = new HashMap<>();
+        context.render("/templates/registro.ftl", model);
+    }
 }

@@ -24,26 +24,26 @@
                 <button class="medio">ELIMINAR USUARIOS</button>
             </a>
             <h2>Gestion ligas</h2>
-            <a href="Ligas/lista">
+            <a href="/ligas/lista">
                 <button class="medio">LISTA LIGAS</button>
             </a>
-            <a href="Ligas/crear">
+            <a href="/ligas/crear">
                 <button class="medio">CREAR LIGAS</button>
             </a>
-            <a href="Ligas/Editar">
+            <a href="/ligas/editar">
                 <button class="medio">EDITAR LIGAS</button>
             </a>
-            <a href="Ligas/Eliminar">
+            <a href="/ligas/eliminar">
                 <button class="medio">ELIMINAR LIGAS</button>
             </a>
             <h2>Gestion informacion</h2>
-            <a href="/editar-noticias">
+            <a href="/noticias/editar">
                 <button class="medio">EDITAR NOTICIAS</button>
             </a>
             <a href="/equipos">
                 <button class="medio">EDITAR EQUIPOS</button>
             </a>
-            <a href="/editar-jornadas">
+            <a href="/jornadas/editar">
                 <button class="medio">EDITAR JORNADAS</button>
             </a>
             <br>

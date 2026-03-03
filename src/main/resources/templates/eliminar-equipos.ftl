@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>eliminar equipos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+     <div class="saludo">
+        <h2>MENÚ</h2>
+        <img src="imagenes/icon-usuario.png" alt="usuario-admin">
+    </div>
+    <div>
+        <h1>ELIMINAR EQUIPOS</h1>
+    </div>
+    <div class="tabla">
+        <table>
+            <tr>
+                <th><img class="usuario" width="50" height="50" src="imagenes/logos equipos/logo1.png"></th>
+                <th><p>EQUIPO 1</p></th>
+                <th>
+                    <button class="botTabla">
+                        <img class="icono" src="imagenes/icon-eliminar.png" alt="eliminar">
+                    </button>
+                </th>
+            </tr>
+            <tr>
+                <th><img class="usuario" src="imagenes/logos equipos/logo2.png"></th>
+                <th><p>EQUIPO 2</p></th>
+                <th>
+                    <button class="botTabla">
+                        <img class="icono" src="imagenes/icon-eliminar.png" alt="eliminar">
+                    </button>
+                </th>
+            </tr>
+            <tr>
+                <th><img class="usuario" src="imagenes/logos equipos/logo3.png"></th>
+                <th><p>EQUIPO 3</p></th>
+                <th>
+                    <button class="botTabla">
+                        <img class="icono" src="imagenes/icon-eliminar.png" alt="eliminar">
+                    </button>
+                </th>
+            </tr>
+            <tr>
+                <th><img class="usuario" src="imagenes/logos equipos/logo4.png"></th>
+                <th><p>EQUIPO 4</p></th>
+                <th>
+                    <button class="botTabla">
+                        <img class="icono" src="imagenes/icon-eliminar.png" alt="eliminar">
+                    </button>
+                </th>
+            </tr>
+            <tr>
+                <th><img class="usuario" src="imagenes/logos equipos/logo5.png"></th>
+                <th><p>EQUIPO 5</p></th>
+                <th>
+                    <button class="botTabla">
+                        <img class="icono" src="imagenes/icon-eliminar.png" alt="eliminar">
+                    </button>
+                </th>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <a href="/equipos">
+        <button class="medio">VOLVER</button>
+    </a>
+</body>
+</html>

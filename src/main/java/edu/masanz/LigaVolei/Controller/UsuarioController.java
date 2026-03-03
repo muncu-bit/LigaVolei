@@ -20,8 +20,6 @@ public class UsuarioController {
         } else {
             System.out.println("Error: Usuario o contraseña incorrectos.");
         }
-
-
     }
 
     public static void EliminacionUsuario(int id) {
@@ -35,5 +33,15 @@ public class UsuarioController {
     public static void lista(@NotNull Context context) {
         Map<String, Object> model = new HashMap<>();
         context.render("/templates/lista-usuarios.ftl", model);
+    }
+
+    public static void aceptar(@NotNull Context context) {
+        Map<String, Object> model = new HashMap<>();
+        context.render("/templates/aceptar-usuario.ftl", model);
+    }
+
+    public static void eliminar(@NotNull Context context) {
+        Map<String, Object> model = new HashMap<>();
+        context.render("/templates/eliminar-usuario.ftl", model);
     }
 }

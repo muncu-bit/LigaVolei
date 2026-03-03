@@ -29,7 +29,7 @@
             <div class="links">
                 <a href="#">¿Olvidaste tu contraseña?</a>
                 <br>
-                <a href="registro.html">Registrarse</a>
+                <a href="/registro">Registrarse</a>
             </div>
         </div>
     </div>
