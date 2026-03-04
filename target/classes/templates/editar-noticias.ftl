@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Editar Noticias</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="form-container">
+            <h1>EDITAR NOTICIA</h1>
+            <div class="form-group">
+               <label for="nom-noticia">NOMBRE NOTICIA</label>
+               <input type="text" id="nom-noticia" placeholder="EDITAR TITULO">
+            </div>
+            <div class="form-group">
+               <label for="descripcion">DESCRIPCIÓN</label>
+               <input type="text" id="descripcion" placeholder="EDITAR DESCRIPCIÓN">
+            </div>
+            <div class="form-group">
+               <label for="texto">TEXTO</label>
+               <textarea id="texto" placeholder="LA NOTICIA"></textarea>
+            </div>
+            <div class="button-group">
+               <button class="botAc">ACEPTAR</button>
+               <button class="botTabla" >CANCELAR</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
