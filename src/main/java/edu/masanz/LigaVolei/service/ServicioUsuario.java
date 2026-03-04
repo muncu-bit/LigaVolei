@@ -1,10 +1,10 @@
 package edu.masanz.LigaVolei.service;
 
 import edu.masanz.LigaVolei.dao.UsuarioDao;
-import edu.masanz.LigaVolei.dto.Usuariocrear;
+import edu.masanz.LigaVolei.dto.Usuario;
 
 public class ServicioUsuario {
-    public static Usuariocrear login(String nombre, String contraseña) {
+    public static Usuario login(String nombre, String contraseña) {
 
         if (nombre == null && contraseña == null) {
 
@@ -14,6 +14,7 @@ public class ServicioUsuario {
         }
 
     }
+
 
     public static void borrarUsuario(int id) {
         UsuarioDao.eliminarUsuario(id);

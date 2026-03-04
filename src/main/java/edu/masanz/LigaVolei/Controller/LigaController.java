@@ -1,34 +1,32 @@
 package edu.masanz.LigaVolei.Controller;
 
-import io.javalin.http.Context;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.HashMap;
-import java.util.Map;
+import edu.masanz.LigaVolei.dao.LigaDao;
+import edu.masanz.LigaVolei.dto.Liga;
 
 public class LigaController {
-    public static void crear(@NotNull Context context) {
-        Map<String, Object> model = new HashMap<>();
-        context.render("/templates/CrearLigaVolley.ftl", model);
+
+    public static void AgregarLiga (int id, String nombre) {
+    LigaDao.agregarLiga(id, nombre);
     }
 
-    public static void editar(@NotNull Context context) {
-        Map<String, Object> model = new HashMap<>();
-        context.render("/templates/EditarLigaVolley.ftl", model);
+    public static void EliminarLiga (int id) {
+        LigaDao.eliminarLiga(id);
     }
 
-    public static void eliminar(@NotNull Context context) {
-        Map<String, Object> model = new HashMap<>();
-        context.render("/templates/EliminarLigas.ftl", model);
+    public static void EditarLiga (int id, String nombre) {
+        LigaDao.editarLiga(id, nombre);
     }
 
-    public static void lista(@NotNull Context context) {
-        Map<String, Object> model = new HashMap<>();
-        context.render("/templates/ListadeLigasVolley.ftl", model);
+    public static void mostrarLigas() {
+
+
     }
 
-    public static void ver(@NotNull Context context) {
-        Map<String, Object> model = new HashMap<>();
-        context.render("/templates/VerLigaVolley.ftl", model);
+    public static void mostrarRankingEquipos(Liga liga) {
+        LigaDao.mostrarEquipos(liga);
     }
+
+
+
+
 }

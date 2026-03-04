@@ -1,11 +1,11 @@
 package edu.masanz.LigaVolei.dao;
 
 import edu.masanz.LigaVolei.database.ConnectionManager;
-import edu.masanz.LigaVolei.dto.Usuariocrear;
+import edu.masanz.LigaVolei.dto.Usuario;
 
 public class UsuarioDao {
 
-    public static Usuariocrear userinicio(String nombre, String contraseña) {
+    public static Usuario userinicio(String nombre, String contraseña) {
 
         String sql = "SELECT id, nombre, contraseña FROM usuarios WHERE nombre = ? AND contraseña = ?";
         Object[] usuario = {nombre, contraseña};
@@ -16,7 +16,7 @@ public class UsuarioDao {
 
             int id = (int) usuarioregistrado[0][0];
 
-            Usuariocrear ejemplo = new Usuariocrear(nombre, contraseña, id);
+            Usuario ejemplo = new Usuario(nombre, contraseña, id);
 
                     return ejemplo;
         }
@@ -39,7 +39,7 @@ public class UsuarioDao {
     }
 
     public static void main(String[] args) {
-        ConnectionManager.conectar("voleiLiga", "prueba", "prueba123");
+        ConnectionManager.conectar("voleiLiga", "Iker", "2345");
 
 
     }
