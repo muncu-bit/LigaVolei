@@ -23,4 +23,9 @@ public class EquipoController {
         Map<String, Object> model = new HashMap<>();
         context.render("/templates/eliminar-equipos.ftl", model);
     }
+
+    public static void crear(@NotNull Context context) {
+        Map<String, Object> model = new HashMap<>();
+        context.render("/templates/CrearEquiposVolley.ftl", model);
+    }
 }

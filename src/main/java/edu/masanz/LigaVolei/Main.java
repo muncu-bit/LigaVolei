@@ -47,6 +47,8 @@ public class Main {
         app.post("/equipos/lista", EquipoController::lista);
         app.get("/equipos/eliminar", EquipoController::eliminar);
         app.post("/equipos/eliminar", EquipoController::eliminar);
+        app.get("/equipos/crear", EquipoController::crear);
+        app.post("/equipos/crear", EquipoController::crear);
 
         //ligas
         app.get("/ligas/crear", LigaController::crear);

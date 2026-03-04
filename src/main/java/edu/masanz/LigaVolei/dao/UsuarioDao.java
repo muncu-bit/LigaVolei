@@ -5,10 +5,10 @@ import edu.masanz.LigaVolei.dto.Usuariocrear;
 
 public class UsuarioDao {
 
-    public static Usuariocrear userinicio(String nombre, String contraseña) {
+    public static Usuariocrear userinicio(String nombre, String contrasena) {
 
         String sql = "SELECT id, nombre, contraseña FROM usuarios WHERE nombre = ? AND contraseña = ?";
-        Object[] usuario = {nombre, contraseña};
+        Object[] usuario = {nombre, contrasena};
        Object [][] usuarioregistrado = ConnectionManager.ejecutarSelectSQL(sql,usuario);
 
 
@@ -16,7 +16,7 @@ public class UsuarioDao {
 
             int id = (int) usuarioregistrado[0][0];
 
-            Usuariocrear ejemplo = new Usuariocrear(nombre, contraseña, id);
+            Usuariocrear ejemplo = new Usuariocrear(nombre, contrasena, id);
 
                     return ejemplo;
         }

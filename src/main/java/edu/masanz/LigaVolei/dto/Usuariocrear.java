@@ -18,7 +18,7 @@ public class Usuariocrear {
         return nombre;
     }
 
-    public String getContraseña() {
+    public String getContrasena() {
         return contrasena;
     }
 
@@ -30,7 +30,7 @@ public class Usuariocrear {
         this.nombre = nombre;
     }
 
-    public void setContraseña(String contraseña) {
+    public void setContrasena(String contraseña) {
         this.contrasena = contraseña;
     }
 

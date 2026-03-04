@@ -15,6 +15,8 @@
         <br>
         <a href="/equipos/eliminar"><button class="medio">Eliminar Equipos</button></a>
         <br>
+        <a href="/equipos/crear"><button class="medio">Crear Equipos</button></a>
+        <br>
         <a href="/index"><button class="medio">VOLVER</button></a>
     </div>
 </body>
