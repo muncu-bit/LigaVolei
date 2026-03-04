@@ -1,10 +1,7 @@
 package edu.masanz.LigaVolei;
 
-import edu.masanz.LigaVolei.Controller.EquipoController;
-import edu.masanz.LigaVolei.Controller.LigaController;
-import edu.masanz.LigaVolei.Controller.LoginController;
+import edu.masanz.LigaVolei.Controller.*;
 
-import edu.masanz.LigaVolei.Controller.UsuarioController;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
 
@@ -63,6 +60,10 @@ public class Main {
         app.get("/ligas/lista/ver-liga", LigaController::ver);
         app.post("/ligas/lista/ver-liga", LigaController::ver);
 
+        //otros
+        app.get("/jornadas", EdicionController::jornada);
+        app.post("/jornadas", EdicionController::jornada);
+        app.get("/noticias", EdicionController::noticia);
     }
 
 }

@@ -1,6 +1,5 @@
 package edu.masanz.LigaVolei.Controller;
 
-import edu.masanz.LigaVolei.dao.UsuarioDao;
 import edu.masanz.LigaVolei.dto.Usuariocrear;
 import edu.masanz.LigaVolei.service.ServicioUsuario;
 import io.javalin.http.Context;
