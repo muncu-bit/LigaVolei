@@ -2,13 +2,13 @@ package edu.masanz.LigaVolei.dto;
 
 public class Usuariocrear {
     String nombre;
-    String contraseña;
+    String contrasena;
     int id;
 
 
-    public Usuariocrear(String nombre, String contraseña, int id) {
+    public Usuariocrear(String nombre, String contrasena, int id) {
         this.nombre = nombre;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.id = id;
 
     }
@@ -19,7 +19,7 @@ public class Usuariocrear {
     }
 
     public String getContraseña() {
-        return contraseña;
+        return contrasena;
     }
 
     public int getId() {
@@ -31,7 +31,7 @@ public class Usuariocrear {
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.contrasena = contraseña;
     }
 
     public void setId(int id) {
@@ -42,7 +42,7 @@ public class Usuariocrear {
     public String toString() {
         return "Usuariocrear{" +
                 "nombre='" + nombre + '\'' +
-                ", contraseña='" + contraseña + '\'' +
+                ", contraseña='" + contrasena + '\'' +
                 ", id=" + id +
                 '}';
     }
