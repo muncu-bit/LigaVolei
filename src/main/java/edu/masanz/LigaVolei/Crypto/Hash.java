@@ -7,12 +7,12 @@ import java.security.SecureRandom;
 public class Hash {
     private String salt;
 
-    public static String hash(String contraseña, String salt) {
+    public static String hash(String contrasena, String salt) {
         // Método para generar el hash SHA-256
         // No está recomendado hacerlo así, es mucho mejor usar Argon o PBKDF2
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            String input = contraseña + salt;
+            String input = contrasena + salt;
             byte[] hashBytes = digest.digest(input.getBytes());
 
             return byteAString(hashBytes);
@@ -40,9 +40,5 @@ public class Hash {
             hexString.append(hex);
         }
         return hexString.toString();
-    }
-
-    public String getSalt() {
-        return salt;
     }
 }
