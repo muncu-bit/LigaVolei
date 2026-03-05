@@ -12,8 +12,9 @@ drop table if exists ligas;
 create table ligas(
 	id int primary key auto_increment,
 	nombre varchar(200) unique not null,
-	estado varchar(200) not null,
-	ganador varchar(200)
+	descripcion varchar(200) not null,
+	img text,
+	estadio text not null,
 );
 
 drop table if exists equipos;
