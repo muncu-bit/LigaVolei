@@ -28,13 +28,10 @@ public class LigaDao {
         String sql = "delete from ligas where id = ?";
         Object[] params = {id};
         ConnectionManager.ejecutarInsertSQL(sql, params);
-
-
     }
+
     public static void mostrarEquipos(Liga Liga) {
         System.out.println("Equipos de la liga: " );
-
-
     }
 
 

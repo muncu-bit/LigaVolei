@@ -17,11 +17,9 @@ public class JugadorDao {
                 jugador.getEdad(),
                 jugador.getDescripcion(),
                 jugador.getEquipoid(),
-
         };
 
         ConnectionManager.ejecutarInsertSQL(sql, params);
-
     }
 
     public static void eliminarJugador(int id) {
@@ -65,12 +63,7 @@ public class JugadorDao {
 
                 );
                 jugadores.add(j);
-
-
-
             }
-
-
         }
         return jugadores;
     }

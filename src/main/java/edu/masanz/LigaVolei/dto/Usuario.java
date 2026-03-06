@@ -10,9 +10,7 @@ public class Usuario {
         this.nombre = nombre;
         this.contrasena = contrasena;
         this.id = id;
-
     }
-
 
     public String getNombre() {
         return nombre;

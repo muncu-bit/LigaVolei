@@ -12,7 +12,6 @@ public class Equipo {
     private int derrotas;
     private int ligaid;
 
-
     private List<Jugador> jugadores = new ArrayList<>();
 
     public Equipo(int id, String nombre, int victorias, int derrotas) {
@@ -20,7 +19,6 @@ public class Equipo {
         this.nombre = nombre;
         this.victorias = victorias;
         this.derrotas = derrotas;
-
     }
 
     public int getLigaid() {
