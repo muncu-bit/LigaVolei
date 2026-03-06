@@ -12,15 +12,12 @@ public class EquipoDao {
         String sql = "delete from equipos where id = ?";
         Object[] params = {id};
         ConnectionManager.ejecutarInsertSQL(sql, params);
-
-
     }
 
     public static void agregarEquipo(Equipo equipo) {
         String sql = "INSERT INTO equipos (nombre, victorias, derrotas) VALUES (?,0,0)";
         Object[] params = {equipo.getNombre()};
         ConnectionManager.ejecutarInsertSQL(sql, params);
-
     }
 
     public static void actualizarEquipo(Equipo equipo) {
@@ -57,9 +54,6 @@ public class EquipoDao {
                 listaEquipos.add(e);
             }
         }
-
-
-
         return listaEquipos;
     }
 

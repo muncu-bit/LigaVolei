@@ -8,7 +8,6 @@ import java.util.List;
 public class PartidoDao {
 
     public static void registrarResultado(int ligaId, int idequipolocal, int idequipovisitante, int puntosLocal, int puntosVisitante) {
-
         String sql = "INSERT INTO partidos (liga_id, equipo_local_id, equipo_visitante_id, puntos_local, puntos_visitante) VALUES (?, ?, ?, ?, ?)";
 
         Object[] params = {ligaId, idequipolocal, idequipovisitante, puntosLocal, puntosVisitante};
@@ -17,6 +16,7 @@ public class PartidoDao {
 
     public static List<Partidos> obtenerPartidos() {
         String sql = "SELECT * FROM partidos";
+
 
     }
 }

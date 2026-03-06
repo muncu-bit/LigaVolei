@@ -9,16 +9,15 @@ public class UsuarioDao {
 
         String sql = "SELECT id, nombre, contraseña FROM usuarios WHERE nombre = ? AND contraseña = ?";
         Object[] usuario = {nombre, contraseña};
-       Object [][] usuarioregistrado = ConnectionManager.ejecutarSelectSQL(sql,usuario);
+        Object [][] usuarioregistrado = ConnectionManager.ejecutarSelectSQL(sql,usuario);
 
 
         if (usuarioregistrado != null && usuarioregistrado.length > 0) {
 
             int id = (int) usuarioregistrado[0][0];
-
             Usuario ejemplo = new Usuario(nombre, contraseña, id);
 
-                    return ejemplo;
+            return ejemplo;
         }
         return null;
     }
@@ -40,8 +39,6 @@ public class UsuarioDao {
 
     public static void main(String[] args) {
         ConnectionManager.conectar("voleiLiga", "Iker", "2345");
-
-
     }
 
 
