@@ -16,11 +16,6 @@ public class PartidoDao {
 
     public static List<Partidos> obtenerPartidos() {
         String sql = "SELECT * FROM partidos";
-<<<<<<< HEAD
         return  null;
-=======
-
-
->>>>>>> dcc5c8055c547fe5c3718155432927147bcd4a5e
     }
 }

@@ -29,10 +29,7 @@ public class Main {
         app.get("/", LoginController::entrarIndex);
         app.post("/", LoginController::entrarIndex);
 
-<<<<<<< HEAD
         //index
-=======
->>>>>>> dcc5c8055c547fe5c3718155432927147bcd4a5e
         app.get("/index", LoginController::index);
         app.post("/index", LoginController::index);
 
