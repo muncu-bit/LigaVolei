@@ -30,8 +30,8 @@ public class Usuariocrear {
         this.nombre = nombre;
     }
 
-    public void setContrasena(String contraseña) {
-        this.contrasena = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public void setId(int id) {

@@ -23,10 +23,12 @@
         </div>
         <h2>LISTA DE LIGAS</h2>
         <div class="lista">
+        <#list>
             <div class="fila">
                 <div>🏐</div>
-                <div class="nombre-liga">Liga de Voleibol Titanes</div>
+                <div class="nombre-liga">${servirLiga.nombre}</div>
             </div>
+        </#list>
             <div class="fila">
                 <div>🏐</div>
                 <div class="nombre-liga">Copa de Campeones del Voleibol</div>

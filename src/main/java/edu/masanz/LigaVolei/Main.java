@@ -1,5 +1,7 @@
 package edu.masanz.LigaVolei;
 
+import edu.masanz.LigaVolei.Controller.EdicionController;
+import edu.masanz.LigaVolei.Controller.LigaController;
 import edu.masanz.LigaVolei.Controller.LoginController;
 
 import edu.masanz.LigaVolei.Controller.UsuarioController;
@@ -23,12 +25,28 @@ public class Main {
         }).start(8080);
 
 
-
+        //Zona login
         app.get("/", LoginController::entrarIndex);
         app.post("/", LoginController::entrarIndex);
+
+        //index
         app.get("/index", LoginController::index);
         app.post("/index", LoginController::index);
-        app.get("/lista/usuarios", UsuarioController::lista);
+
+        // usuarios
+        app.get("/usuarios/lista", UsuarioController::lista);
+
+
+        //ligas
+        app.get("/liga/lista", LigaController::servirLista);
+
+        //equipos
+
+
+        //otros
+        app.get("/jornada/editar", EdicionController::jornada);
+        app.get("/noticia/editar", EdicionController::noticia);
+
 
 
     }

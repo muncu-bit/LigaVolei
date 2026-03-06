@@ -10,8 +10,8 @@ import java.util.Map;
 
 public class UsuarioController {
 
-    public static void procesarLogin(String nombre, String contraseña) {
-        Usuario usuario = ServicioUsuario.login(nombre, contraseña);
+    public static void procesarLogin(String nombre, String contrasena) {
+        Usuario usuario = ServicioUsuario.login(nombre, contrasena);
 
         if (usuario != null) {
             System.out.println("Bienvenido" + usuario.getNombre());

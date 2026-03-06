@@ -4,13 +4,13 @@ import edu.masanz.LigaVolei.dao.UsuarioDao;
 import edu.masanz.LigaVolei.dto.Usuario;
 
 public class ServicioUsuario {
-    public static Usuario login(String nombre, String contraseña) {
+    public static Usuario login(String nombre, String contrasena) {
 
-        if (nombre == null && contraseña == null) {
+        if (nombre == null && contrasena == null) {
 
             return null;
         } else {
-            return UsuarioDao.userinicio(nombre, contraseña);
+            return UsuarioDao.userinicio(nombre, contrasena);
         }
 
     }
