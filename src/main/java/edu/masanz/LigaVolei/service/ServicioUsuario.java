@@ -13,7 +13,7 @@ public class ServicioUsuario {
             return UsuarioDao.userinicio(nombre, contraseña);
         }
     }
-    
+
     public static void borrarUsuario(int id) {
         UsuarioDao.eliminarUsuario(id);
     }

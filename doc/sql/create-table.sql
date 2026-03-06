@@ -3,13 +3,12 @@ drop table if exists ligas;
 drop table if exists equipos;
 drop table if exists partidos;
 
-
 create table usuarios (
 	id int primary key auto_increment,
 	email varchar(200) unique,
 	usuario varchar(200) unique,
 	contra varchar(200) not null,
-	salt varchar(16) not null,
+	salt varchar(32) not null,
 	rol int not null
 );
 
@@ -39,7 +38,3 @@ create table partidos (
     FOREIGN KEY (equipo_visitante_id) REFERENCES equipos(id),
 
 );
-
-
-
-
