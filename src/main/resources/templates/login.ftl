@@ -12,23 +12,24 @@
         <p>Descripción breve</p>
         <div class="login">
             <h1>Iniciar Sesión</h1>
-
             <form action="/index" method="POST">
                 <div class="input">
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="nombre@ejemplo.com" required>
                 </div>
+
                 <div class="input">
                     <label for="password">Contraseña</label>
                     <input type="password" id="password" placeholder="**********" required>
                 </div>
                 <button type="submit">Iniciar sesión</button>
+
             </form>
 
             <div class="links">
                 <a href="#">¿Olvidaste tu contraseña?</a>
                 <br>
-                <a href="/registro">Registrarse</a>
+                <a href="registro.html">Registrarse</a>
             </div>
         </div>
     </div>

@@ -14,36 +14,36 @@
         <h1>MENÚ</h1>
         <div>
             <h2>Gestion usuarios</h2>
-            <a href="/usuarios/lista">
+            <a href="/lista/usuarios">
                 <button class="medio">LISTA USUARIOS</button>
             </a>
-            <a href="/usuarios/aceptar">
+            <a href="/aceptar">
                 <button class="medio">ACEPTAR USUARIOS</button>
             </a>
             <a href="/usuarios/eliminar">
                 <button class="medio">ELIMINAR USUARIOS</button>
             </a>
             <h2>Gestion ligas</h2>
-            <a href="/ligas/lista">
+            <a href="Ligas/lista">
                 <button class="medio">LISTA LIGAS</button>
             </a>
-            <a href="/ligas/crear">
+            <a href="Ligas/crear">
                 <button class="medio">CREAR LIGAS</button>
             </a>
-            <a href="/ligas/editar">
+            <a href="Ligas/Editar">
                 <button class="medio">EDITAR LIGAS</button>
             </a>
-            <a href="/ligas/eliminar">
+            <a href="Ligas/Eliminar">
                 <button class="medio">ELIMINAR LIGAS</button>
             </a>
             <h2>Gestion informacion</h2>
-            <a href="/noticias/editar">
+            <a href="/editar-noticias">
                 <button class="medio">EDITAR NOTICIAS</button>
             </a>
             <a href="/equipos">
                 <button class="medio">EDITAR EQUIPOS</button>
             </a>
-            <a href="/jornadas/editar">
+            <a href="/editar-jornadas">
                 <button class="medio">EDITAR JORNADAS</button>
             </a>
             <br>

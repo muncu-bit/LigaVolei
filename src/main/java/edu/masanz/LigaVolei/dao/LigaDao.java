@@ -1,21 +1,58 @@
 package edu.masanz.LigaVolei.dao;
 
+import edu.masanz.LigaVolei.database.ConnectionManager;
+import edu.masanz.LigaVolei.dto.Equipo;
+import edu.masanz.LigaVolei.dto.Liga;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class LigaDao {
 
-    public static void crearLiga(String nombre,String descripcion,String img,String estadio){
-        String sql = "INSERT INTO ligas (nombre,descripcion,img,estadio) VALUES (?,?,?,?);";
+
+    public static void agregarLiga(Liga liga) {
+        String sql = "INSERT INTO ligas (nombre, descripcion) VALUES (?, ?)";
+        Object[] params =  {liga.getNombre(), liga.getDescripcion()};
+
+        ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
-    public static void eliminarLiga(String nombre){
-        String sql = "DELETE FROM ligas WHERE nombre = ?;";
+    public static void actualizarLiga (Liga liga) {
+        String sql = "UPDATE ligas SET nombre = ?, descripcion = ? WHERE id = ?";
+        Object[] params = {liga.getNombre(), liga.getDescripcion(), liga.getId()};
+        ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
-    public static void verLigas(){
-        String sql ="SELECT * FROM ligas";
+
+    public static void eliminarLiga(int id) {
+        String sql = "delete from ligas where id = ?";
+        Object[] params = {id};
+        ConnectionManager.ejecutarInsertSQL(sql, params);
+
+
+    }
+    public static void mostrarEquipos(Liga Liga) {
+        System.out.println("Equipos de la liga: " );
+
+
     }
 
-    public static void editarLiga(String nombre, String descripcion){
-        String sql = "UPDATE ligas SET nombre = ?, descripcion = ? where id = ?";
+
+    public static List<Liga> listarLigas() {
+        String sql = "Select * from ligas";
+        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, null);
+
+        List<Liga> ligas = new ArrayList<>();
+        if (resultado != null) {
+            for (Object[] row : resultado) {
+                ligas.add(new Liga(
+                        (int) row[0],
+                        (String) row[1],
+                        (String) row[2]
+                ));
+            }
+        }
+        return ligas;
     }
 
 }
