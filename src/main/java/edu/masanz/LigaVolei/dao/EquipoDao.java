@@ -9,20 +9,20 @@ import java.util.List;
 public class EquipoDao {
 
     public static void eliminarEquipo(int id) {
-        String sql = "delete from equipos where id = ?";
+        String sql = "delete from equipos.ftl where id = ?";
         Object[] params = {id};
         ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
     public static void agregarEquipo(Equipo equipo) {
-        String sql = "INSERT INTO equipos (nombre, victorias, derrotas) VALUES (?,0,0)";
+        String sql = "INSERT INTO equipos.ftl (nombre, victorias, derrotas) VALUES (?,0,0)";
         Object[] params = {equipo.getNombre()};
         ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
     public static void actualizarEquipo(Equipo equipo) {
 
-        String sql = "UPDATE equipos SET nombre = ?, victorias=?, derrotas=? WHERE id = ?";
+        String sql = "UPDATE equipos.ftl SET nombre = ?, victorias=?, derrotas=? WHERE id = ?";
 
         Object[] params = {
                 equipo.getNombre(),
@@ -36,7 +36,7 @@ public class EquipoDao {
 
 
     public static List<Equipo> obtenerEquiposPorLiga(int ligaid) {
-        String sql = "SELECT * FROM equipos WHERE ligaid = ?";
+        String sql = "SELECT * FROM equipos.ftl WHERE ligaid = ?";
         Object[] params = {ligaid};
 
         Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);

@@ -40,7 +40,7 @@ public class Main {
         //ligas
         app.get("/liga/lista", LigaController::servirLista);
 
-        //equipos
+        //equipos.ftl
 
 
         //otros

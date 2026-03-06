@@ -23,7 +23,7 @@ public class EquipoController {
         int idLiga = Integer.parseInt(context.pathParam("ligaid"));
         Map <String, Object> model = new HashMap<>();
         List<Equipo> equipos = servicioEquipo.obtenerEquiposPorLiga(idLiga);
-        model.put("equipos", equipos);
+        model.put("equipos.ftl", equipos);
         context.render("templates/lista-equipos", model);
 
     }
@@ -34,14 +34,14 @@ public class EquipoController {
         Equipo equipo = new Equipo(0,nombre, 0, 0);
 
         ServicioEquipo.agregarEquipo(equipo);
-        context.redirect("/lista-equipos");
+        context.redirect("/lista-equipos.ftl");
 
     }
     public static void eliminarEquipo(Context context) {
         int idEquipo = Integer.parseInt(context.pathParam("id"));
 
         ServicioEquipo.eliminarEquipo(idEquipo);
-        context.redirect("/lista-equipos");
+        context.redirect("/lista-equipos.ftl");
     }
 
     public static void editarEquipo(Context context) {
@@ -52,7 +52,7 @@ public class EquipoController {
         Equipo equipo = new Equipo(idEquipo, nombre, 0, 0);
         ServicioEquipo.actualizarEquipo(equipo);
 
-        context.redirect("/equipo/" + idEquipo);
+        context.redirect("/equipo.ftl.ftl" + idEquipo);
     }
 
 }
