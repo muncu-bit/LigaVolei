@@ -11,14 +11,20 @@ public class Equipo {
     private int victorias;
     private int derrotas;
     private int ligaid;
+    private int puntos;
 
     private List<Jugador> jugadores = new ArrayList<>();
 
-    public Equipo(int id, String nombre, int victorias, int derrotas) {
+    public Equipo(int id, String nombre, int victorias, int derrotas, int puntos) {
         this.id = id;
         this.nombre = nombre;
         this.victorias = victorias;
         this.derrotas = derrotas;
+        this.puntos = puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
     }
 
     public int getLigaid() {

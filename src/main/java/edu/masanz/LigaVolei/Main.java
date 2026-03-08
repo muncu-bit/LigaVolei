@@ -1,10 +1,7 @@
 package edu.masanz.LigaVolei;
 
-import edu.masanz.LigaVolei.Controller.EdicionController;
-import edu.masanz.LigaVolei.Controller.LigaController;
-import edu.masanz.LigaVolei.Controller.LoginController;
+import edu.masanz.LigaVolei.Controller.*;
 
-import edu.masanz.LigaVolei.Controller.UsuarioController;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
 
@@ -41,6 +38,9 @@ public class Main {
         app.get("/liga/lista", LigaController::servirLista);
 
         //equipos.ftl
+
+        //equipos de cada liga
+        app.get("liga", EquipoController::mostrarEquiposPorLiga);
 
 
         //otros

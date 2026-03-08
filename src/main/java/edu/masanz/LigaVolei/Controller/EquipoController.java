@@ -31,7 +31,7 @@ public class EquipoController {
     public static void crearEquipo(Context context) {
 
         String nombre = context.formParam("nombre");
-        Equipo equipo = new Equipo(0,nombre, 0, 0);
+        Equipo equipo = new Equipo(0,nombre, 0, 0, 0);
 
         ServicioEquipo.agregarEquipo(equipo);
         context.redirect("/lista-equipos.ftl");
@@ -49,7 +49,7 @@ public class EquipoController {
         int idEquipo = Integer.parseInt(context.pathParam("id"));
         String nombre = context.formParam("nombre");
 
-        Equipo equipo = new Equipo(idEquipo, nombre, 0, 0);
+        Equipo equipo = new Equipo(idEquipo, nombre, 0, 0, 0);
         ServicioEquipo.actualizarEquipo(equipo);
 
         context.redirect("/equipo.ftl.ftl" + idEquipo);
