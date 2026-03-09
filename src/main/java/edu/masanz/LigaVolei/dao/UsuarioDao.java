@@ -9,7 +9,7 @@ public class UsuarioDao {
 
         String sql = "SELECT id, nombre, contraseña FROM usuarios WHERE nombre = ? AND contraseña = ?";
         Object[] usuario = {nombre, contrasena};
-       Object [][] usuarioregistrado = ConnectionManager.ejecutarSelectSQL(sql,usuario);
+        Object [][] usuarioregistrado = ConnectionManager.ejecutarSelectSQL(sql,usuario);
 
 
         if (usuarioregistrado != null && usuarioregistrado.length > 0) {
@@ -30,9 +30,9 @@ public class UsuarioDao {
         ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
-    public static void registrarUsuario(String nombre, String contra) {
-        String sql = "INSERT INTO usuarios (nombre,contra) VALUES (?,?)";
-        Object[] params = {nombre,contra};
+    public static void registrarUsuario(String usuario, String contra, String email, String salt) {
+        String sql = "INSERT INTO usuarios (nombre,contra) VALUES (?,?,?,?)";
+        Object[] params = {usuario,contra,email,salt};
 
         ConnectionManager.ejecutarInsertSQL(sql,params);
     }

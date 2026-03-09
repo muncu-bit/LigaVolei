@@ -13,21 +13,7 @@ public class LoginController {
         Map<String, Object> model = new HashMap<>();
 
         context.render("/templates/login.ftl", model);
-        /*
-        String rolUsuario = context.sessionAttribute("rol");
-
-        if (rolUsuario == null) {
-            context.redirect("/");
-            return;
-        }
-
-        if (rolUsuario.equalsIgnoreCase("ADMIN")) {
-            model.put("encabezado", "Menu Administrador");
-            context.render("templates/index-admin.ftl", model);
-        } else {
-            model.put("encabezado", "Menu Usuario");
-            context.render("templates/index-admin.ftl", model);
-        }*/
+        
     }
 
     public static void index(@NotNull Context context) {
