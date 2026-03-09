@@ -2,6 +2,7 @@ drop table if exists usuarios;
 drop table if exists ligas;
 drop table if exists equipos;
 drop table if exists partidos;
+drop table if exists jugadores;
 
 create table usuarios (
 	id int primary key auto_increment,
@@ -23,31 +24,28 @@ create table equipos (
     nombre varchar(200) unique,
     victorias int not null default 0,
     derrotas int not null default 0,
-    puntos int not null default 0,
-    idliga int,
-    foreign key (idliga) references ligas(id)
 
 );
 
 create table partidos (
     id int primary key auto_increment,
-    ligaid int not null,
+    liga_id int not null,
     equipo_local_id int not null,
     equipo_visitante_id int not null,
     puntos_local int not null,
     puntos_visitante int not null,
-    FOREIGN KEY (ligaid) REFERENCES ligas(id),
-    FOREIGN KEY (idequipolocal) REFERENCES equipos(id),
-    FOREIGN KEY (idequipovisitante) REFERENCES equipos(id),
+    FOREIGN KEY (liga_id) REFERENCES ligas(id),
+    FOREIGN KEY (equipo_local_id) REFERENCES equipos(id),
+    FOREIGN KEY (equipo_visitante_id) REFERENCES equipos(id),
 
 );
 
 create table jugadores (
-id int auto_increment primary key,
-nombre Varchar(100) Not null,
-edad int,
-descripcion varchar(100),
-equipoid int,
-foreign key (idequipo) references equipos(id)
+    id int primary key auto_increment,
+    nombre varchar(100) not null,
+    edad int not null,
+    descripcion varchar(200) not null,
+    idequipo int not null,
+    FOREIGN KEY (idequipo) REFERENCES equipos(id)
 
 );
