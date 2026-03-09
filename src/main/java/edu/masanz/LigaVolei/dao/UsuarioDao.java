@@ -31,7 +31,7 @@ public class UsuarioDao {
     }
 
     public static void registrarUsuario(String usuario, String contra, String email, String salt) {
-        String sql = "INSERT INTO usuarios (nombre,contra) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO usuarios (usuario,contra,email,salt) VALUES (?,?,?,?)";
         Object[] params = {usuario,contra,email,salt};
 
         ConnectionManager.ejecutarInsertSQL(sql,params);
