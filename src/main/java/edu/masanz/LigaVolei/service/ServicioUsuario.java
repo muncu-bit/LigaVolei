@@ -18,7 +18,7 @@ public class ServicioUsuario {
         UsuarioDao.eliminarUsuario(id);
     }
 
-    public static void agregarUsuario(String nombre, String contra) {
-        UsuarioDao.registrarUsuario(nombre,contra);
+    public static void agregarUsuario(String nombre, String contra, String email, String salt) {
+        UsuarioDao.registrarUsuario(nombre,contra, email, salt);
     }
 }
