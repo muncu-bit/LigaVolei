@@ -37,7 +37,7 @@ public class EquipoDao {
 
 
     public static List<Equipo> obtenerEquiposPorLiga(int ligaid) {
-        String sql = "SELECT * FROM equipos WHERE ligaid = ?";
+        String sql = "SELECT * FROM equipos WHERE idliga = ?";
         Object[] params = {ligaid};
 
         Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);

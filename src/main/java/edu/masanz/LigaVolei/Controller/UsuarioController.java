@@ -27,8 +27,8 @@ public class UsuarioController {
         ServicioUsuario.borrarUsuario(id);
     }
 
-    public static void agregarUsuario(String nombre, String contra) {
-        ServicioUsuario.agregarUsuario(nombre, contra);
+    public static void agregarUsuario(String nombre, String contra, String email, String salt) {
+        ServicioUsuario.agregarUsuario(nombre, contra, email, salt);
     }
 
     public static void lista(@NotNull Context context) {

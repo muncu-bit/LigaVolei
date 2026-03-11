@@ -6,11 +6,15 @@ public class Liga {
     private String nombre;
     private String descripcion;
 
-    public Liga(int id, String nombre, String descripcion) {
+
+
+
+    public Liga(int id, String nombre) {
         this.ligaid = id;
         this.nombre = nombre;
-        this.descripcion = descripcion;
+
     }
+
 
     public int getId() {
         return ligaid;
@@ -35,4 +39,5 @@ public class Liga {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
 }

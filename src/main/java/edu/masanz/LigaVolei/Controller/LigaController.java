@@ -20,10 +20,30 @@ public class LigaController {
         context.render("templates/lista-ligas.ftl", model);
     }
 
+    public static void servirListaParaEliminar(Context context) {
+        Map<String,Object> model = new HashMap<>();
+        List<Liga> ligas = servicioLiga.listarLigas();
+        model.put("ligas", ligas);
+        context.render("templates/EliminarLigas.ftl", model);
+    }
+
+    public static void servirListaParaEditar(Context context) {
+        Map<String,Object> model = new HashMap<>();
+        List<Liga> ligas = servicioLiga.listarLigas();
+        model.put("ligas", ligas);
+        context.render("templates/EditarLigaVolley.ftl", model);
+    }
+
+
+
+    public static void servirCrearLiga(Context context) {
+        context.render("/templates/CrearLigaVolley.ftl");
+    }
+
     public static void crearLiga(Context context) {
         String nombre = context.formParam("nombre");
-        String descripcion = context.formParam("descripcion");
-        Liga liga = new Liga(0, nombre, descripcion);
+        Liga liga = new Liga(0, nombre);
+        liga.setNombre(nombre);
         servicioLiga.agregarLiga(liga);
         context.redirect("/lista-ligas.ftl");
 
@@ -32,8 +52,7 @@ public class LigaController {
     public static void editarLiga(Context context) {
         int idLiga = Integer.parseInt(context.formParam("id"));
         String nombre = context.formParam("nombre");
-        String descripcion = context.formParam("descripcion");
-        Liga liga = new Liga(idLiga, nombre, descripcion);
+        Liga liga = new Liga(idLiga, nombre);
         servicioLiga.actualizarLiga(liga);
         context.redirect("/liga" + idLiga);
     }

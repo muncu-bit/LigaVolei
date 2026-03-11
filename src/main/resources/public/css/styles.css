@@ -6,10 +6,24 @@
 }
 
 body{
-    background-color: #f4f1d8;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+     background-color: #f4f1d8;
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding: 0;
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+   }
+}
+
+.pagina{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:120px;
+    height:100vh;
 }
 
 .header {
@@ -18,12 +32,28 @@ body{
     align-items: center;
 }
 
+.contenedor img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
 .contenedor-equipo{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    height: 100vh;
+    background-color: #f4f1d8;
+    min-height: 100vh;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.contenedor-liga {
+ display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    background-color: #f4f1d8;
+    min-height: 100vh;
 }
 
 .contenedor-principal {
@@ -43,17 +73,18 @@ body{
 
 table {
     width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
+       border-collapse: collapse;
+       background-color: #fafafa;
+       border-radius: 8px;
+       overflow: hidden;
 }
 
 
 table th {
     background-color: #2f80ed;
-    color: #ffffff;
-    padding: 10px;
-    text-align: center;
-    font-weight: 600;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
 }
 
 table th.ranking,
@@ -63,9 +94,22 @@ table td:first-child {
 }
 
 table td {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #e0e0e0;
+     padding: 10px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+.barra-superior select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: #fff;
 }
 
 
@@ -101,6 +145,21 @@ table td {
     flex-direction: column;
     gap: 15px;
 }
+
+.caja-liga {
+        width: 380px;
+           background-color: white;
+           border-radius: 12px;
+           padding: 20px;
+           box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+           display: flex;
+           flex-direction: column;
+           gap: 20px;
+
+           height: auto;
+}
+
 
 .caja-imagen {
     flex: 0 1 30%;
@@ -170,9 +229,24 @@ table td {
     display: flex;
     gap: 12px;
     background-color: #f8f9fb;
+    align-items: center;
+    justify-content: space-between;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 12px;
+}
+
+.botTabla {
+    background-color: rgb(189, 57, 40);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.botTabla:hover {
+    background-color: rgb(255, 30, 0);
 }
 
 img{
@@ -185,6 +259,10 @@ h3{
     margin: 0%;
 }
 
+.verde {
+    color: #004D40;
+    margin: 0%;}
+
 h1{
     text-align: center;
     margin: 5px;
@@ -196,8 +274,11 @@ p{
 }
 
 .login, .registro{
-    padding: 20px;
-    width: 300px;
+   padding: 25px;
+       width: 320px;
+       background-color: white;
+       border-radius: 10px;
+       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 label{
@@ -265,6 +346,14 @@ se puede reutilizar para el menu hamburgesa*/
 }
 
 /*CSS para los titulos del menu admin*/
+
+.index{
+     display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:350px;
+}
+
 .index h1{
     margin: 0;
 }
@@ -276,11 +365,14 @@ se puede reutilizar para el menu hamburgesa*/
 
 /*CSS boton mediano*/
 .medio{
-    padding: 8px;
-    border-radius: 5px;
-    margin-top: 2px;
-    width: 50%;
+   padding: 12px;
+       border-radius: 6px;
+       margin-top: 6px;
+       width: 220px;
+       font-size: 15px;
 }
+
+
 
 .index a{
     display: flex;
@@ -295,7 +387,7 @@ se puede reutilizar para el menu hamburgesa*/
     padding: 8px;
     border-radius: 5px;
     margin-top: 2px;
-    width: 50%;
+    width: 220px;
 }
 
 /*CSS boton tabla eliminar*/
@@ -330,10 +422,11 @@ se puede reutilizar para el menu hamburgesa*/
 
 /*CSS para que todas las tablas sean iguales*/
 table{
-    background-color: lightgray;
-    border: 1px solid black;
+    background-color: #fafafa;
+    overflow: hidden;
     border-collapse: collapse;
-    width: 80%;
+    border-radius: 8px;
+    width: 100%;
 }
 
 .tabla{
@@ -387,8 +480,19 @@ th img{
 }
 
 .contenedor p{
-    margin: 0%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align: center;
 }
+
+.contenedor {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align: center;}
 
 .input{
     margin-bottom: 1.5vh;

@@ -11,15 +11,15 @@ public class LigaDao {
 
 
     public static void agregarLiga(Liga liga) {
-        String sql = "INSERT INTO ligas (nombre, descripcion) VALUES (?, ?)";
-        Object[] params =  {liga.getNombre(), liga.getDescripcion()};
+        String sql = "INSERT INTO ligas (nombre) VALUES (?)";
+        Object[] params =  {liga.getNombre()};
 
         ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
     public static void actualizarLiga (Liga liga) {
-        String sql = "UPDATE ligas SET nombre = ?, descripcion = ? WHERE id = ?";
-        Object[] params = {liga.getNombre(), liga.getDescripcion(), liga.getId()};
+        String sql = "UPDATE ligas SET nombre = ? WHERE id = ?";
+        Object[] params = {liga.getNombre(), liga.getId()};
         ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
@@ -30,9 +30,7 @@ public class LigaDao {
         ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
-    public static void mostrarEquipos(Liga Liga) {
-        System.out.println("Equipos de la liga: " );
-    }
+
 
 
     public static List<Liga> listarLigas() {
@@ -44,8 +42,8 @@ public class LigaDao {
             for (Object[] row : resultado) {
                 ligas.add(new Liga(
                         (int) row[0],
-                        (String) row[1],
-                        (String) row[2]
+                        (String) row[1]
+
                 ));
             }
         }
