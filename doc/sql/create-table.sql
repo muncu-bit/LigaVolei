@@ -12,40 +12,41 @@ create table usuarios (
 	salt varchar(32) not null,
 	rol int not null
 );
-
-create table ligas (
-    id int primary key auto_increment,
-    nombre varchar (200) unique,
-    descripcion varchar(200) not null
+CREATE TABLE ligas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT
 );
 
-create table equipos (
-    id int primary key auto_increment,
-    nombre varchar(200) unique,
-    victorias int not null default 0,
-    derrotas int not null default 0,
-
+CREATE TABLE equipos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    victorias INT DEFAULT 0,
+    derrotas INT DEFAULT 0,
+    puntos INT DEFAULT 0,
+    idliga INT,
+    FOREIGN KEY (idliga) REFERENCES ligas(id)
 );
 
-create table partidos (
-    id int primary key auto_increment,
-    liga_id int not null,
-    equipo_local_id int not null,
-    equipo_visitante_id int not null,
-    puntos_local int not null,
-    puntos_visitante int not null,
-    FOREIGN KEY (liga_id) REFERENCES ligas(id),
-    FOREIGN KEY (equipo_local_id) REFERENCES equipos(id),
-    FOREIGN KEY (equipo_visitante_id) REFERENCES equipos(id),
-
-);
-
-create table jugadores (
-    id int primary key auto_increment,
-    nombre varchar(100) not null,
-    edad int not null,
-    descripcion varchar(200) not null,
-    idequipo int not null,
+CREATE TABLE jugadores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    edad INT,
+    descripcion TEXT,
+    idequipo INT,
     FOREIGN KEY (idequipo) REFERENCES equipos(id)
+);
 
+
+CREATE TABLE partidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ligaId INT,
+    idequipoLocal INT,
+    idequipoVisitante INT,
+    puntosLocal INT,
+    puntosVisitante INT,
+
+    FOREIGN KEY (ligaId) REFERENCES ligas(id),
+    FOREIGN KEY (idequipoLocal) REFERENCES equipos(id),
+    FOREIGN KEY (idequipoVisitante) REFERENCES equipos(id)
 );
