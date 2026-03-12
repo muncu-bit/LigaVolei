@@ -14,7 +14,7 @@
 
                 <h2>CREAR LIGA</h2>
 
-                <form action="/ligas/crear" method="post" enctype="multipart/form-data">
+                <form action="/liga/crear" method="post" enctype="multipart/form-data">
 
                     <div class="input">
                         <label for="nombre">Nombre de la Liga</label>
