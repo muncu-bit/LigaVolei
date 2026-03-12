@@ -15,12 +15,12 @@
             <form action="/index" method="POST">
                 <div class="input">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="nombre@ejemplo.com" required>
+                    <input type="email" name="email" id="email" placeholder="nombre@ejemplo.com" required>
                 </div>
 
                 <div class="input">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" placeholder="**********" required>
+                    <input type="password" name="password" id="password" placeholder="**********" required>
                 </div>
                 <button type="submit">Iniciar sesión</button>
 
