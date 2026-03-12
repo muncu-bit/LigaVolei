@@ -2,6 +2,8 @@ package edu.masanz.LigaVolei;
 
 import edu.masanz.LigaVolei.Controller.*;
 import edu.masanz.LigaVolei.database.ConnectionManager;
+import edu.masanz.LigaVolei.service.ServicioEdicion;
+import edu.masanz.LigaVolei.service.ServicioLogin;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
 
@@ -26,14 +28,11 @@ public class Main {
 
         //Zona login
         app.get("/", LoginController::mostrarLogin);
-        app.post("/", LoginController::mostrarLogin);
+        app.post("/", ServicioLogin::login);
 
         app.get("/registro", LoginController::mostrarRegistro);
-        app.post("/registro", LoginController::registrar);
+        app.post("/registro", ServicioLogin::registrar);
 
-        //index
-        app.get("/index", LoginController::login);
-        app.post("/index", LoginController::login);
 
         // usuarios
         app.get("/usuarios/lista", UsuarioController::lista);
@@ -69,8 +68,8 @@ public class Main {
         app.get("/jornada/editar", EdicionController::jornada);
         app.get("/noticia/editar", EdicionController::noticia);
 
-
-
+        // editar noticias
+        app.post("/editar-noticia", ServicioEdicion::editarNoticia);
     }
 
 }
