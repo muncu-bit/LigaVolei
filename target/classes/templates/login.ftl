@@ -3,13 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/../css/styles.css">
 </head>
 <body>
     <div class="contenedor">
         <img src="imagenes/pelota-volei.png">
-        <h3>Liga Voleibol</h3>
-        <p>Descripción breve</p>
+        <h3 class="verde">Liga Voleibol</h3>
         <div class="login">
             <h1>Iniciar Sesión</h1>
             <form action="/index" method="POST">

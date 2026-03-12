@@ -21,4 +21,8 @@ public class ServicioUsuario {
     public static void agregarUsuario(String nombre, String contra, String email, String salt) {
         UsuarioDao.registrarUsuario(nombre,contra, email, salt);
     }
+
+    public static Object obtenerTodos() {
+        return UsuarioDao.obtenerTodos();
+    }
 }

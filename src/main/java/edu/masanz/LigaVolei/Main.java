@@ -35,6 +35,9 @@ public class Main {
 
         // usuarios
         app.get("/usuarios/lista", UsuarioController::lista);
+        app.post("/usuarios/lista", UsuarioController::lista);
+
+
 
 
         //ligas

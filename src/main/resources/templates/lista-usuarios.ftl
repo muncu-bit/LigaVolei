@@ -5,8 +5,6 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>lista usuarios</title>
     <link rel="stylesheet" href="/css/styles.css">
-
-    
 </head>
 <body>
     <div class="saludo">
@@ -17,28 +15,15 @@
     <div>
         <h1>LISTA DE USUARIOS</h1>
     </div>
-    <div class="tabla2">
-        <table class="tabla2">
+    <div class="tabla">
+        <table class="tabla">
+             <#list usuarios as usuario>
             <tr>
-                <th><img class="usuario" src="imagenes/icon-usuario.png"></th>
-                <th><p>Juan</p></th>
+                <th><p>${usuario.id}</p></th>
+                <th><p>${usuario.nombre}</p></th>
+                <th><p>${usuario.contra}</p></th>
             </tr>
-            <tr>
-                <th><img class="usuario" src="imagenes/icon-usuario.png"></th>
-                <th><p>Marta</p></th>
-            </tr>
-            <tr>
-                <th><img class="usuario" src="imagenes/icon-usuario.png"></th>
-                <th><p>Mich</p></th>
-            </tr>
-            <tr>
-                <th><img class="usuario" src="imagenes/icon-usuario.png"></th>
-                <th><p>Lander</p></th>
-            </tr>
-            <tr>
-                <th><img class="usuario" src="imagenes/icon-usuario.png"></th>
-                <th><p>Pedro</p></th>
-            </tr>
+            </#list>
         </table>
     </div>
     <br>

@@ -33,6 +33,7 @@ public class UsuarioController {
 
     public static void lista(@NotNull Context context) {
         Map<String, Object> model = new HashMap<>();
+        model.put("usuarios", ServicioUsuario.obtenerTodos());
         context.render("/templates/lista-usuarios.ftl", model);
     }
 }

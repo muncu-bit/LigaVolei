@@ -9,23 +9,17 @@
 <body>
 
        <div class="pagina">
-
-           <div class="saludo">
-               <h2>Hola Administrador</h2>
-               <img src="imagenes/icon-usuario.png" alt="usuario-admin">
-           </div>
-
            <div class="index">
                <h1>MENÚ</h1>
 
                <div>
                    <h2>Gestion usuarios</h2>
 
-                   <a href="/lista/usuarios">
+                   <a href="/usuarios/lista">
                        <button class="medio">LISTA USUARIOS</button>
                    </a>
 
-                   <a href="/aceptar">
+                   <a href="/usuarios/aceptar">
                        <button class="medio">ACEPTAR USUARIOS</button>
                    </a>
 

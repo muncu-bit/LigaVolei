@@ -3,6 +3,9 @@ package edu.masanz.LigaVolei.dao;
 import edu.masanz.LigaVolei.database.ConnectionManager;
 import edu.masanz.LigaVolei.dto.Usuario;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UsuarioDao {
 
     public static Usuario userinicio(String nombre, String contrasena) {
@@ -37,9 +40,28 @@ public class UsuarioDao {
         ConnectionManager.ejecutarInsertSQL(sql,params);
     }
 
+    public static List<Usuario> obtenerTodos() {
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        String sql = "SELECT  nombre FROM usuarios";
+        Object[][] resultados = ConnectionManager.ejecutarSelectSQL(sql, new Object[]{});
+        if (resultados != null) {
+            for (Object[] fila : resultados) {
+                int id = (int) fila[0];
+                String nombre = (String) fila[1];
+                String contra = (String) fila[2];
+                listaUsuarios.add(new Usuario(nombre, contra, id));
+            }
+        }
+
+        return listaUsuarios;
+    }
+
+
+
     public static void main(String[] args) {
         ConnectionManager.conectar("voleiLiga", "Iker", "2345");
     }
+
 
 
 }
