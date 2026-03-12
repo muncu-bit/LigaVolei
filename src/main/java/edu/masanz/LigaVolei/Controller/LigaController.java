@@ -45,7 +45,7 @@ public class LigaController {
         Liga liga = new Liga(0, nombre);
         liga.setNombre(nombre);
         servicioLiga.agregarLiga(liga);
-        context.redirect("/lista-ligas.ftl");
+        context.redirect("templates/lista-ligas.ftl");
 
     }
 
