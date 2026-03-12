@@ -1,6 +1,5 @@
 package edu.masanz.LigaVolei.Controller;
 
-import edu.masanz.LigaVolei.dto.Liga;
 import edu.masanz.LigaVolei.dto.Usuario;
 import edu.masanz.LigaVolei.service.ServicioUsuario;
 import io.javalin.http.Context;
@@ -21,8 +20,6 @@ public class UsuarioController {
         } else {
             System.out.println("Error: Usuario o contraseña incorrectos.");
         }
-
-
     }
 
     public static void EliminacionUsuario(int id) {
@@ -39,4 +36,5 @@ public class UsuarioController {
         model.put("usuarios", usuario);
         context.render("templates/lista-usuarios.ftl", model);
     }
+
 }

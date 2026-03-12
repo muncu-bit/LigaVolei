@@ -47,9 +47,6 @@ public class Main {
             ctx.redirect("/usuarios/lista");
         });
 
-
-
-
         //ligas
 
         app.get("/liga/crear", LigaController::servirCrearLiga); // CrearLiga
