@@ -3,6 +3,8 @@ package edu.masanz.LigaVolei.service;
 import edu.masanz.LigaVolei.dao.UsuarioDao;
 import edu.masanz.LigaVolei.dto.Usuario;
 
+import java.util.List;
+
 public class ServicioUsuario {
     public static Usuario login(String nombre, String contrasena) {
 
@@ -22,7 +24,7 @@ public class ServicioUsuario {
         UsuarioDao.registrarUsuario(nombre,contra, email, salt);
     }
 
-    public static Object obtenerTodos() {
-        return UsuarioDao.obtenerTodos();
+    public static List<Usuario> listarUsuarios() {
+        return UsuarioDao.listarUsuarios();
     }
 }

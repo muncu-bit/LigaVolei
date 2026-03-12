@@ -1,7 +1,6 @@
 package edu.masanz.LigaVolei;
 
 import edu.masanz.LigaVolei.Controller.*;
-
 import edu.masanz.LigaVolei.database.ConnectionManager;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
@@ -36,6 +35,14 @@ public class Main {
         // usuarios
         app.get("/usuarios/lista", UsuarioController::lista);
         app.post("/usuarios/lista", UsuarioController::lista);
+        app.get("/eliminar-usuario", ctx -> {
+            String idParam = ctx.queryParam("id");
+            if (idParam != null) {
+                int id = Integer.parseInt(idParam);
+                UsuarioController.EliminacionUsuario(id);
+            }
+            ctx.redirect("/usuarios/lista");
+        });
 
 
 
@@ -56,9 +63,6 @@ public class Main {
         app.get("/liga/{id}", EquipoController::mostrarEquiposPorLiga); // Verliga
 
         //equipos.ftl
-
-
-
 
 
         //otros
