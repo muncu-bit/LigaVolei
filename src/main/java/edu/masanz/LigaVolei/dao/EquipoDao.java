@@ -71,7 +71,7 @@ import java.util.List;
 
 
         public static List<Equipo> obtenerEquiposPorLiga(int ligaid) {
-            String sql = "SELECT * FROM equipos WHERE idliga = ?";
+            String sql = "SELECT * FROM equipos WHERE idliga = ? order by puntos desc";
             Object[] params = {ligaid};
 
             Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);

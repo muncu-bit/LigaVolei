@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<div class="contenedor-equipo">
+<div class="contenedor-equipo-eliminar">
     <div class="caja">
         <div class="header">
             <input type="checkbox" id="menu-check">

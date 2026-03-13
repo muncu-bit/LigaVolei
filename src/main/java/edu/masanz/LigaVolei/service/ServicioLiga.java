@@ -15,8 +15,8 @@ import java.util.List;
             LigaDao.eliminarLiga(id);
         }
 
-        public static void actualizarLiga(Liga liga) {
-            LigaDao.actualizarLiga(liga);
+        public static void actualizarNombreLiga(int id, String nuevoNombre) {
+        LigaDao.actualizarNombreLiga(id, nuevoNombre);
         }
 
         public List<Liga> listarLigas() {

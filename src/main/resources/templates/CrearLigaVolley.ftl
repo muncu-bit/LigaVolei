@@ -26,13 +26,6 @@
                         <textarea id="descripcion" name="descripcion" placeholder="Ingresa la descripción"></textarea>
                     </div>
 
-                    <div class="input">
-                        <label>Foto de Liga</label>
-                        <input type="file" id="foto" name="foto" accept="image/*">
-                    </div>
-
-
-
                     <div class="buttons-group">
                         <button type="submit">CREAR</button>
 

@@ -17,12 +17,6 @@ import java.util.Map;
     public class EquipoController {
         private static ServicioLiga servicioLiga = new ServicioLiga();
 
-
-        public static void eliminarEquipo(int id) {
-            EquipoDao.eliminarEquipo(id);
-        }
-
-
         public static ServicioEquipo servicioEquipo = new ServicioEquipo();
 
         public static void mostrarEquiposPorLiga(Context context) {
@@ -70,18 +64,7 @@ import java.util.Map;
             ctx.render("templates/EliminarEquipos.ftl", Map.of("equipos", equipos));
         }
 
-        public static void editarEquipo(Context context) {
 
-            int idEquipo = Integer.parseInt(context.pathParam("id"));
-            String nombre = context.formParam("nombre");
-
-            Equipo equipo = new Equipo(idEquipo, nombre, 0, 0, 0);
-            ServicioEquipo.actualizarEquipo(equipo);
-
-            context.redirect("/equipo.ftl.ftl" + idEquipo);
-
-
-        }
 
         public static void verEquipo(Context context) {
             int idEquipo = Integer.parseInt(context.pathParam("id"));

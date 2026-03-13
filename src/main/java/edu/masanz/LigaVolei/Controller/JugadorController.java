@@ -60,24 +60,6 @@ import java.util.Map;
             context.redirect("/equipos/" + equipoId);
         }
 
-        public static void editarJugador(Context context) {
-
-            int id = Integer.parseInt(context.pathParam("id"));
-            String nombre = context.formParam("nombre");
-            int edad = Integer.parseInt(context.formParam("edad"));
-            String descripcion = context.formParam("descripcion");
-            int equipoid = Integer.parseInt(context.formParam("equipoid"));
-
-            Jugador jugador = new Jugador(id, nombre, edad, descripcion, equipoid);
-            ServicioJugador.actualizarJugador(jugador);
-            context.redirect("/jugador.ftl/" + id);
-        }
-
-        public static void eliminarJugador(Context context) {
-            int id = Integer.parseInt(context.pathParam("id"));
-            ServicioJugador.eliminarJugador(id);
-            context.redirect("/lista-jugadores");
-        }
 
 
 

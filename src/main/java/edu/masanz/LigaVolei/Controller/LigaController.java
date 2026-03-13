@@ -30,21 +30,12 @@ import java.util.Map;
 
         public static void servirEditarLiga(Context ctx) {
             int id = Integer.parseInt(ctx.pathParam("id"));
-            Liga liga = LigaDao.obtenerLiga(id);
+            Liga liga = ServicioLiga.obtenerLiga(id);
 
             ctx.render("templates/EditarLiga.ftl", Map.of(
                     "liga", liga
             ));
         }
-
-        public static void servirListaParaEditar(Context context) {
-            Map<String,Object> model = new HashMap<>();
-            List<Liga> ligas = servicioLiga.listarLigas();
-            model.put("ligas", ligas);
-            context.render("templates/EditarLiga.ftl", model);
-        }
-
-
 
         public static void servirCrearLiga(Context context) {
             context.render("/templates/CrearLigaVolley.ftl");
@@ -63,7 +54,7 @@ import java.util.Map;
             int id = Integer.parseInt(ctx.pathParam("id"));
             String nuevoNombre = ctx.formParam("nombreNuevo");
 
-            LigaDao.actualizarNombreLiga(id, nuevoNombre);
+            ServicioLiga.actualizarNombreLiga(id, nuevoNombre);
 
             ctx.redirect("/ligas");
         }

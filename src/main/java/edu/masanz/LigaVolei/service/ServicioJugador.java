@@ -11,14 +11,6 @@ import java.util.List;
             JugadorDao.agregarJugador(jugador);
         }
 
-        public static void actualizarJugador(Jugador jugador) {
-            JugadorDao.actualizarJugador(jugador);
-        }
-
-        public static void eliminarJugador(int id) {
-            JugadorDao.eliminarJugador(id);
-        }
-
         public static List<Jugador> listarJugadoresPorEquipo(int equipoid) {
             return JugadorDao.listarJugadoresPorEquipo(equipoid);
         }
