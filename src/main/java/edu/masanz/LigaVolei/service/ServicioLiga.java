@@ -5,21 +5,26 @@ import edu.masanz.LigaVolei.dto.Liga;
 
 import java.util.List;
 
-public class ServicioLiga {
-    public static void agregarLiga(Liga liga) {
-        LigaDao.agregarLiga(liga);
-    }
 
-    public static void eliminarLiga(int id) {
-        LigaDao.eliminarLiga(id);
-    }
+    public class ServicioLiga {
+        public static void agregarLiga(Liga liga) {
+            LigaDao.agregarLiga(liga);
+        }
 
-    public static void actualizarLiga(Liga liga) {
-        LigaDao.actualizarLiga(liga);
-    }
+        public static void eliminarLiga(int id) {
+            LigaDao.eliminarLiga(id);
+        }
 
-    public List<Liga> listarLigas() {
-        return LigaDao.listarLigas();
-    }
+        public static void actualizarLiga(Liga liga) {
+            LigaDao.actualizarLiga(liga);
+        }
 
-}
+        public List<Liga> listarLigas() {
+            return LigaDao.listarLigas();
+        }
+
+        public static Liga obtenerLiga(int id) {
+            return LigaDao.obtenerLiga(id);
+        }
+
+    }

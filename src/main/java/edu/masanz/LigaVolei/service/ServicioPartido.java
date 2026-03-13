@@ -6,66 +6,80 @@ import edu.masanz.LigaVolei.dao.PartidoDao;
 import edu.masanz.LigaVolei.dto.Equipo;
 import edu.masanz.LigaVolei.dto.Partido;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class ServicioPartido {
 
-    public static void generarPartidosLiga(int ligaid) {
-        List<Equipo> equipos = EquipoController.servicioEquipo.obtenerEquiposPorLiga(ligaid);
-        Random random = new Random();
+    public class ServicioPartido {
 
+        public static void jugarJornada(int ligaId) {
 
-        for (int i = 0; i < equipos.size(); i++) {
-            for (int j = i + 1; j < equipos.size(); j++) {
+            List<Equipo> equipos = EquipoController.servicioEquipo.obtenerEquiposPorLiga(ligaId);
 
+            // Mezclar equipos para que cada jornada sean partidos distintos
+            Collections.shuffle(equipos);
+
+            Random random = new Random();
+
+            // Emparejar de 2 en 2
+            for (int i = 0; i < equipos.size(); i += 2) {
+
+                if (i + 1 >= equipos.size()) break; // Si hay impar, uno descansa
 
                 Equipo local = equipos.get(i);
-                Equipo visitante = equipos.get(j);
+                Equipo visitante = equipos.get(i + 1);
 
-                int puntoslocal = random.nextInt(5);
-                int puntosvisitante = random.nextInt(5);
+                int puntosLocal = random.nextInt(5);
+                int puntosVisitante = random.nextInt(5);
 
-                while (puntoslocal == puntosvisitante) {
-                    puntoslocal = random.nextInt(5);
-
-                    Partido partido = new Partido(
-                            0,
-                            ligaid,
-                            local.getId(),
-                            visitante.getId(),
-                            puntoslocal,
-                            puntosvisitante
-                    );
-
-                    PartidoDao.agregarPartido(partido);
-
-                    actualizarEquipos(local, visitante, puntoslocal, puntosvisitante);
+                // Evitar empates
+                while (puntosLocal == puntosVisitante) {
+                    puntosLocal = random.nextInt(5);
+                    puntosVisitante = random.nextInt(5);
                 }
+
+                Partido partido = new Partido(
+                        0,
+                        ligaId,
+                        local.getId(),
+                        visitante.getId(),
+                        puntosLocal,
+                        puntosVisitante
+                );
+
+                PartidoDao.agregarPartido(partido);
+
+                actualizarEquipos(local, visitante, puntosLocal, puntosVisitante);
             }
         }
 
-    }
+
+
         public static void actualizarEquipos(Equipo local, Equipo visitante, int puntosLocal, int puntosVisitante){
 
-          if (puntosLocal > puntosVisitante){
-              local.setVictorias(local.getVictorias() + 1);
-              local.setPuntos(local.getPuntos() + 3);
-              visitante.setVictorias(visitante.getVictorias() + 1);
+            // Sumar puntos anotados
+            local.setPuntos(local.getPuntos() + puntosLocal);
+            visitante.setPuntos(visitante.getPuntos() + puntosVisitante);
 
-          } else {
+            // Sumar puntos por victoria
+            if (puntosLocal > puntosVisitante){
+                local.setVictorias(local.getVictorias() + 1);
+                visitante.setDerrotas(visitante.getDerrotas() + 1);
 
-              visitante.setVictorias(visitante.getVictorias() + 1);
-              local.setPuntos(local.getPuntos() + 3);
-              local.setVictorias(local.getVictorias() + 1);
-          }
+                // 3 puntos por victoria
+                local.setPuntos(local.getPuntos() + 3);
 
-          EquipoDao.actualizarEquipo(local);
-          EquipoDao.actualizarEquipo(visitante);
+            } else {
+                visitante.setVictorias(visitante.getVictorias() + 1);
+                local.setDerrotas(local.getDerrotas() + 1);
+
+                visitante.setPuntos(visitante.getPuntos() + 3);
+            }
+
+            EquipoDao.actualizarEquipo(local);
+            EquipoDao.actualizarEquipo(visitante);
+        }
+
 
     }
-
-    public static void jugarJornada(int ligaid) {
-    }
-}

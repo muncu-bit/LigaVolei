@@ -4,73 +4,79 @@ package edu.masanz.LigaVolei.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Equipo {
+    public  class Equipo {
 
-    private int id;
-    private String nombre;
-    private int victorias;
-    private int derrotas;
-    private int ligaid;
-    private int puntos;
+        private int id;
+        private String nombre;
+        private int victorias;
+        private int derrotas;
+        private int idLiga;
+        private int puntos;
 
-    private List<Jugador> jugadores = new ArrayList<>();
+        private List<Jugador> jugadores = new ArrayList<>();
 
-    public Equipo(int id, String nombre, int victorias, int derrotas, int puntos) {
-        this.id = id;
-        this.nombre = nombre;
-        this.victorias = victorias;
-        this.derrotas = derrotas;
-        this.puntos = puntos;
+        public Equipo(int id, String nombre, int victorias, int derrotas, int puntos) {
+            this.id = id;
+            this.nombre = nombre;
+            this.victorias = victorias;
+            this.derrotas = derrotas;
+            this.puntos = puntos;
+
+        }
+
+        public Equipo(int id, String nombre) {
+            this.id = id;
+            this.nombre = nombre;
+        }
+
+        public void setPuntos(int puntos) {
+            this.puntos = puntos;
+        }
+
+        public int getLigaid() {
+            return idLiga;
+        }
+
+        public void setLigaid(int ligaid) {
+            this.idLiga = ligaid;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public int getVictorias() {
+            return victorias;
+        }
+
+        public void setVictorias(int victorias) {
+            this.victorias = victorias;
+        }
+
+        public int getDerrotas() {
+            return derrotas;
+        }
+
+        public void setDerrotas(int derrotas) {
+            this.derrotas = derrotas;
+        }
+
+        // Pasamos directamente el valor por ganar, las derrotas ni suman ni restan así que no hay que cambiar nada
+        public int getPuntos() {
+            return victorias * 3;
+        }
+
+
     }
-
-    public void setPuntos(int puntos) {
-        this.puntos = puntos;
-    }
-
-    public int getLigaid() {
-        return ligaid;
-    }
-
-    public void setLigaid(int ligaid) {
-        this.ligaid = ligaid;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getVictorias() {
-        return victorias;
-    }
-
-    public void setVictorias(int victorias) {
-        this.victorias = victorias;
-    }
-
-    public int getDerrotas() {
-        return derrotas;
-    }
-
-    public void setDerrotas(int derrotas) {
-        this.derrotas = derrotas;
-    }
-
-    // Pasamos directamente el valor por ganar, las derrotas ni suman ni restan así que no hay que cambiar nada
-    public int getPuntos() {
-        return victorias * 3;
-    }
-
-
-}

@@ -12,9 +12,6 @@
     <div class="contenedor-eliminar">
         <div class="form-container">
 
-
-
-
             <div class="lista">
                 <#list equipos as equipo>
                     <div class="fila">
