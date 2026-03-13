@@ -29,7 +29,7 @@
                                 <td>${usuario.nombre}</td>
                                 <td>
                                     <div class="acciones">
-                                        <a href="/eliminar-usuario?id=${usuario.id}" class="btn-accion btn-eliminar" title="Eliminar usuario">🗑️ Eliminar</a>
+                                        <a href="/usuarios/eliminar?id=${usuario.id}" class="btn-accion btn-eliminar" title="Eliminar usuario">🗑️ Eliminar</a>
                                     </div>
                                 </td>
                             </tr>

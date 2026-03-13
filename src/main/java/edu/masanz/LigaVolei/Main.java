@@ -25,7 +25,6 @@ public class Main {
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
-
         //Zona login
         app.get("/", LoginController::mostrarLogin);
         app.post("/", ServicioLogin::login);
@@ -33,11 +32,14 @@ public class Main {
         app.get("/registro", LoginController::mostrarRegistro);
         app.post("/registro", ServicioLogin::registrar);
 
+        //index
+        app.get("/index",LoginController::mostrarIndex);
+        app.post("/index",LoginController::mostrarIndex);
 
         // usuarios
         app.get("/usuarios/lista", UsuarioController::lista);
         app.post("/usuarios/lista", UsuarioController::lista);
-        app.get("/eliminar-usuario", ctx -> {
+        app.get("/usuarios/eliminar", ctx -> {
             String idParam = ctx.queryParam("id");
             if (idParam != null) {
                 int id = Integer.parseInt(idParam);

@@ -66,4 +66,6 @@ public class ServicioPartido {
 
     }
 
+    public static void jugarJornada(int ligaid) {
+    }
 }

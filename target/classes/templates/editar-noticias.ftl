@@ -12,15 +12,15 @@
             <h1>EDITAR NOTICIA</h1>
             <div class="form-group">
                <label for="nom-noticia">NOMBRE NOTICIA</label>
-               <input type="text" id="nom-noticia" placeholder="EDITAR TITULO">
+               <input type="text" id="nom-noticia" name="titulo" value="${titulo}" placeholder="EDITAR TITULO">
             </div>
             <div class="form-group">
                <label for="descripcion">DESCRIPCIÓN</label>
-               <input type="text" id="descripcion" placeholder="EDITAR DESCRIPCIÓN">
+               <input type="text" id="descripcion" name="descripcion" value="${descripcion}" placeholder="EDITAR DESCRIPCIÓN">
             </div>
             <div class="form-group">
                <label for="texto">TEXTO</label>
-               <textarea id="texto" placeholder="LA NOTICIA"></textarea>
+               <textarea id="texto" name="texto" placeholder="LA NOTICIA">${texto}</textarea>
             </div>
             <div class="button-group">
                <button class="botAc">ACEPTAR</button>
