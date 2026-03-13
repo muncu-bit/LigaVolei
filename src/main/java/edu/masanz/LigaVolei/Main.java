@@ -22,7 +22,7 @@ public class Main {
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("public");
             config.fileRenderer(new JavalinFreemarker());
-        }).start(8080);
+        }).start(7070);
 
         app.before(ctx -> {
             String path = ctx.path();
