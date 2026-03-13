@@ -1,0 +1,722 @@
+:root {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body{
+     background-color: #f4f1d8;
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding: 0;
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+   }
+
+.pagina{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:120px;
+    height:100vh;
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.contenedor-equipo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #f4f1d8;
+    min-height: 100vh;
+    align-items: center;
+    margin-top: 5vh;
+    width: 100%;
+    padding: 10px;
+
+}
+
+.contenedor-liga {
+ display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    background-color: #f4f1d8;
+    min-height: 100vh;
+}
+
+.contenedor-principal {
+    max-width: 900px;
+   margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding:20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    height: auto;
+
+}
+
+
+table {
+    width: 100%;
+       border-collapse: collapse;
+       background-color: #fafafa;
+       border-radius: 8px;
+       overflow: hidden;
+}
+
+
+table th {
+    background-color: #2f80ed;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+}
+
+table th.ranking,
+table td:first-child {
+    text-align: left;
+    padding-left: 15px;
+}
+
+table td {
+     padding: 10px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+.barra-superior select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+
+.menu-icono {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 26px;
+    color:#2f80ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+.caja {
+       width: 80%;
+       height: 60%;
+       background-color: #ffffff;
+       border-radius: 12px;
+       padding: 20px;
+       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+       display: flex;
+       flex-direction: column;
+       gap: 15px;
+   }
+
+  .nombre-liga {
+    font-size: 30px;
+    text-align: left;
+  }
+
+.caja-liga {
+        width: 380px;
+           background-color: white;
+           border-radius: 12px;
+           padding: 20px;
+           box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+           display: flex;
+           flex-direction: column;
+           gap: 20px;
+
+           height: auto;
+}
+
+
+.caja-imagen {
+    flex: 0 1 30%;
+    width: 30%;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f1f5ff;
+    border: 1px solid #d6e0ff;
+}
+
+.caja-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.jugadores {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.jugador {
+    display: flex;
+    gap: 12px;
+    background-color: #f8f9fb;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.jugador-img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.info-jugador {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.jugador-desc {
+    font-size: 13px;
+    color: gray;
+    line-height: 1.4;
+}
+
+
+
+
+.lista {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 30px;
+}
+
+.fila {
+
+    display: flex;
+    gap: 12px;
+    background-color: #f8f9fb;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.botTabla {
+    background-color: rgb(189, 57, 40);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.botTabla:hover {
+    background-color: rgb(255, 30, 0);
+}
+
+img{
+    width: 100px;
+    margin-bottom: 20px;    
+}
+
+h3{
+    color: #1d3dc7;
+    margin: 0%;
+}
+
+.verde {
+    color: #004D40;
+    margin: 0%;}
+
+h1{
+    text-align: center;
+    margin: 5px;
+}
+
+p{
+    color: #000000;
+    text-align: center;
+}
+
+.login, .registro{
+   padding: 25px;
+       width: 320px;
+       background-color: white;
+       border-radius: 10px;
+       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+label{
+    display: inline;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #B2DFDB;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #004D40; 
+    color: white; 
+    padding: 10px;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    width: 100%; 
+}
+
+button:hover {
+    background-color: #00796B;
+}
+
+.links {
+    text-align: center; 
+    margin-top: 15px; 
+}
+
+a {
+    color: #004D40;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+
+/*CSS para el cabezal saludo de la pagina index,
+se puede reutilizar para el menu hamburgesa*/
+.saludo{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    padding: 5px 0px 0px 0px;
+    position: relative;
+}
+
+.saludo div{
+    display: flex;
+}
+
+.saludo img{
+    padding-top: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+/*CSS para los titulos del menu admin*/
+
+.index{
+     display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:350px;
+}
+
+.index h1{
+    margin: 0;
+}
+
+.index div h2{
+    margin: 5px 0px 0px 0px;
+    text-align: center;
+}
+
+/*CSS boton mediano*/
+.medio{
+   padding: 12px;
+       border-radius: 6px;
+       margin-top: 6px;
+       width: 220px;
+       font-size: 15px;
+}
+
+
+
+.index a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*CSS boton para salir de la pagina*/
+.salir{
+    background-color: red;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 2px;
+    width: 220px;
+}
+
+/*CSS boton tabla eliminar*/
+.botTabla{
+    background-color: rgb(189, 57, 40);
+}
+
+.botTabla:hover{
+    background-color: rgb(255, 30, 0);
+}
+
+/*CSS boton tabla aceptar*/
+
+.botAc{
+    background-color: rgb(60, 192, 71);
+}
+
+.botAc:hover{
+    background-color: rgb(0, 255, 0);
+}
+
+/*CCS para iconos de las tablas*/
+.icono{
+    width: 30px;
+    height: 30px;
+}
+
+.usuario{
+    width: 60px;
+    height: 70px;
+}
+
+/*CSS para que todas las tablas sean iguales*/
+table{
+    background-color: #fafafa;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.tabla{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*CSS para las tablas con 3 datos*/
+.tabla th:nth-child(1) {
+  border: 1px solid black;
+  width: 5%;
+  height: 5%;
+}
+
+.btn-avanzar {
+    padding: 10px 20px;
+    background: #0275d8;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    }
+
+.btn-avanzar:hover {
+    opacity: 0.85;
+}
+
+.radios {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.tabla th:nth-child(2), th:nth-child(3) {
+    border: none; 
+    width: 5%;
+    height: 5%;
+    margin: 0%;
+}
+
+/*CSS para las imagenes de las tablas*/
+th img{
+    margin: 0%;
+}
+
+/*CSS para tablas con 2 datos*/
+.tabla2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabla2 th{
+    width: 5%;
+    height: 5%;
+    border: 1px solid black;
+}
+
+.tabla{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor p{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align: center;
+}
+
+.contenedor {
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+
+
+}
+
+.contenedor-eliminar {
+
+         display:flex;
+         flex-direction:column;
+         align-items:center;
+         justify-content:center;
+         text-align: center;
+         width: 100%;
+         max-width: 400px;
+         margin-top: 470vh;
+}
+
+.contenedor-dejugadores {
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        margin-top: 60%;
+        margin-bottom: 15%;
+}
+
+.input{
+    margin-bottom: 1.5vh;
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #B2DFDB;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contenedor-pagina {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+
+}
+
+
+.pagina-equipo {
+    background: #ffffff;
+    width: 90%;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 16px;
+
+    margin-top: 80vh;
+}
+.formacion-grid {
+    display: grid;
+
+    gap: 15px;
+}
+
+.formacion-card {
+    background: #f0f4ff;
+    border-left: 5px solid #4a6cf7;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: left;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+
+}
+
+.formacion-card:hover {
+
+    box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+}
+
+.formacion-nombre {
+    font-size: 16px;
+}
+
+.jugadores-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
+
+/* TARJETA DE JUGADOR */
+.jugador-card {
+    background: #f4f1d8;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+}
+
+.jugador-card:hover {
+
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* INFO DEL JUGADOR */
+.jugador-nombre {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.jugador-edad {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.jugador-desc {
+    font-size: 14px;
+    color: #333;
+}
+.boton-volver {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* MENU HAMBURGUESA */
+
+#menu-check {
+  display: none;
+}
+
+/* 2. Botón hamburguesa */
+.menu-icono {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 26px;
+  color: #2f80ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3. Menú oculto */
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.nav-menu ul {
+  list-style: none;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-menu li a:hover {
+  background-color: #f2f4f8;
+}
+
+/* 4. Mostrar menú cuando está marcado */
+#menu-check:checked + .menu-icono + .nav-menu {
+  display: block;
+}
