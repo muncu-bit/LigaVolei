@@ -105,9 +105,7 @@ public class Main {
         if (path.equals("/") || path.equals("/registro")) {
             return true;
         }
-        if (path.equals("/favicon.ico")) {
-            return true;
-        }
+
         return path.startsWith("/css") || path.startsWith("/imagenes");
     }
 
