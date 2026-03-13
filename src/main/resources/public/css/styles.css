@@ -660,7 +660,6 @@ th img {
     justify-content: space-between;
     margin-bottom: 30px;
     padding: 20px;
-    background-color: ;
     border-radius: 12px;
     border: none;
 }
@@ -837,8 +836,8 @@ th img {
 .btn-volver, .btn-crear {
         padding: 12px 24px;
         font-size: 13px;
-    }
 }
+
 
 /* MENU HAMBURGUESA */
 

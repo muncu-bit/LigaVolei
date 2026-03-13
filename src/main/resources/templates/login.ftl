@@ -11,7 +11,8 @@
         <h3 class="verde">Liga Voleibol</h3>
         <div class="login">
             <h1>Iniciar Sesión</h1>
-            <form action="/index" method="POST">
+
+            <form action="/" method="POST">
                 <div class="input">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="nombre@ejemplo.com" required>

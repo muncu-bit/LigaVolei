@@ -3,7 +3,6 @@ package edu.masanz.LigaVolei;
 import edu.masanz.LigaVolei.Controller.*;
 import edu.masanz.LigaVolei.database.ConnectionManager;
 import edu.masanz.LigaVolei.service.ServicioEdicion;
-import edu.masanz.LigaVolei.service.ServicioLogin;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
 
@@ -25,12 +24,25 @@ public class Main {
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
+        app.before(ctx -> {
+            String path = ctx.path();
+            if (esRutaPublica(path)) {
+                return;
+            }
+
+            Integer usuarioId = ctx.sessionAttribute("usuarioId");
+            if (usuarioId == null) {
+                ctx.redirect("/");
+            }
+        });
+
         //Zona login
         app.get("/", LoginController::mostrarLogin);
-        app.post("/", ServicioLogin::login);
+        app.post("/", LoginController::procesarLogin);
 
         app.get("/registro", LoginController::mostrarRegistro);
-        app.post("/registro", ServicioLogin::registrar);
+        app.post("/registro", LoginController::procesarRegistro);
+        app.get("/logout", LoginController::cerrarSesion);
 
         //index
         app.get("/index",LoginController::mostrarIndex);
@@ -84,6 +96,19 @@ public class Main {
 
         // editar noticias
         app.post("/editar-noticia", ServicioEdicion::editarNoticia);
+    }
+
+    private static boolean esRutaPublica(String path) {
+        if (path == null) {
+            return true;
+        }
+        if (path.equals("/") || path.equals("/registro")) {
+            return true;
+        }
+        if (path.equals("/favicon.ico")) {
+            return true;
+        }
+        return path.startsWith("/css") || path.startsWith("/imagenes");
     }
 
 }

@@ -29,11 +29,47 @@ public class UsuarioDao {
         ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
-    public static void registrarUsuario(String usuario, String contra, String email, String salt) {
-        String sql = "INSERT INTO usuarios (usuario,contra,email,salt) VALUES (?,?,?,?)";
-        Object[] params = {usuario,contra,email,salt};
+    public static Usuario obtenerPorEmail(String email) {
+        String sql = "SELECT id, usuario, email, contra, salt, rol FROM usuarios WHERE email = ?";
+        Object[] params = {email};
+        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
 
-        ConnectionManager.ejecutarInsertSQL(sql,params);
+        if (resultado != null && resultado.length > 0) {
+            Object[] row = resultado[0];
+            int id = (int) row[0];
+            String usuario = (String) row[1];
+            String emailDb = (String) row[2];
+            String contra = (String) row[3];
+            String salt = (String) row[4];
+            int rol = (int) row[5];
+            return new Usuario(id, usuario, emailDb, contra, salt, rol);
+        }
+        return null;
+    }
+
+    public static boolean existeEmail(String email) {
+        String sql = "SELECT id FROM usuarios WHERE email = ?";
+        Object[] params = {email};
+        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
+        return resultado != null && resultado.length > 0;
+    }
+
+    public static boolean existeUsuario(String usuario) {
+        String sql = "SELECT id FROM usuarios WHERE usuario = ?";
+        Object[] params = {usuario};
+        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
+        return resultado != null && resultado.length > 0;
+    }
+
+    public static long registrarUsuario(String usuario, String contra, String email, String salt) {
+        return registrarUsuario(usuario, contra, email, salt, 2);
+    }
+
+    public static long registrarUsuario(String usuario, String contra, String email, String salt, int rol) {
+        String sql = "INSERT INTO usuarios (email, usuario, contra, salt, rol) VALUES (?, ?, ?, ?, ?)";
+        Object[] params = {email, usuario, contra, salt, rol};
+
+        return ConnectionManager.ejecutarInsertSQL(sql,params);
     }
 
     public static List<Usuario> listarUsuarios() {

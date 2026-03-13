@@ -10,10 +10,9 @@
     <div class="contenedor">
         <img src="imagenes/pelota-volei.png">
         <h3>Liga Voleibol</h3>
-        <p>Descripción breve</p>
         <div class="registro">
             <h1>Registrarse</h1>
-            <form>
+            <form action="/registro" method="POST">
                 <div class="input">
                     <label for="usuario">Nombre de usuario</label>
                     <input type="text" id="usuario" name="usuario" placeholder="FLorca" required>
@@ -30,8 +29,8 @@
                 </div>
 
                 <div class="input">
-                    <label for="confirm-password">Confirmar contraseña</label>
-                    <input type="password" id="confirm-password" id="confirm-password" placeholder="**********" required>
+                    <label for="confirmPassword">Confirmar contraseña</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="**********" required>
                 </div>
 
                 <button type="submit">Registro</button>

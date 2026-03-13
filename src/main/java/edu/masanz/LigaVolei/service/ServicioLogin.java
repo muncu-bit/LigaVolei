@@ -1,76 +1,78 @@
 package edu.masanz.LigaVolei.service;
 
 import edu.masanz.LigaVolei.Crypto.Hash;
-import edu.masanz.LigaVolei.database.ConnectionManager;
-import io.javalin.http.Context;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.HashMap;
-import java.util.Map;
+import edu.masanz.LigaVolei.dao.UsuarioDao;
+import edu.masanz.LigaVolei.dto.LoginRequestDto;
+import edu.masanz.LigaVolei.dto.RegistroRequestDto;
+import edu.masanz.LigaVolei.dto.Usuario;
 
 public class ServicioLogin {
-    public static void login(@NotNull Context context) {
-        String email = context.formParam("email");
-        String password = context.formParam("password");
 
-        Map<String, Object> model = new HashMap<>();
-
-        String sql = "SELECT contra, salt FROM usuarios WHERE email = ?";
-        Object[] params = {email};
-
-        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
-
-        if (resultado != null && resultado.length > 0) {
-
-            String contraBD = (String) resultado[0][0];
-            String saltBD = (String) resultado[0][1];
-
-            String hashIntroducido = Hash.hash(password, saltBD);
-
-            if (hashIntroducido.equals(contraBD)) {
-                context.render("/templates/index.ftl", model);
-                return;
-            }
+    public static Usuario autenticar(LoginRequestDto request) {
+        if (request == null) {
+            return null;
         }
 
-        model.put("error", "Email o contraseña incorrectos");
-        context.render("/templates/login.ftl", model);
+        String email = request.getEmail();
+        String password = request.getPassword();
+
+        if (isBlank(email) || isBlank(password)) {
+            return null;
+        }
+
+        Usuario usuario = UsuarioDao.obtenerPorEmail(email);
+        if (usuario == null) {
+            return null;
+        }
+
+        String hashIntroducido = Hash.hash(password, usuario.getSalt());
+        if (!hashIntroducido.equals(usuario.getContrasena())) {
+            return null;
+        }
+
+        return usuario;
     }
 
-    public static void registrar(Context context) {
-        String usuario = context.formParam("usuario");
-        String email = context.formParam("email");
-        String password = context.formParam("password");
-        String confirmPassword = context.formParam("confirmPassword");
-
-        Map<String, Object> model = new HashMap<>();
-
-        // comprobar contraseñas
-        if (!password.equals(confirmPassword)) {
-            model.put("error", "Las contraseñas no coinciden");
-            context.render("/templates/registro.ftl", model);
-            return;
+    public static String registrar(RegistroRequestDto request) {
+        if (request == null) {
+            return "Datos de registro invalidos";
         }
 
-        // generar SALT
-        String salt = Hash.generarSalt();
+        String usuario = request.getUsuario();
+        String email = request.getEmail();
+        String password = request.getPassword();
+        String confirmPassword = request.getConfirmPassword();
 
-        // generar HASH
+        if (isBlank(usuario) || isBlank(email) || isBlank(password) || isBlank(confirmPassword)) {
+            return "Rellena todos los campos";
+        }
+
+        if (!password.equals(confirmPassword)) {
+            return "Las contrasenas no coinciden";
+        }
+
+        if (UsuarioDao.existeEmail(email)) {
+            return "El email ya esta registrado";
+        }
+
+        if (UsuarioDao.existeUsuario(usuario)) {
+            return "El usuario ya esta registrado";
+        }
+
+        String salt = Hash.generarSalt();
         String hash = Hash.hash(password, salt);
 
-        // rol por defecto (usuario normal)
         int rol = 2;
+        long id = UsuarioDao.registrarUsuario(usuario, hash, email, salt, rol);
 
-        String sql = "INSERT INTO usuarios (email, usuario, contra, salt, rol) VALUES (?, ?, ?, ?, ?)";
-        Object[] params = {email, usuario, hash, salt, rol};
-
-        long id = ConnectionManager.ejecutarInsertSQL(sql, params);
-
-        if (id > 0) {
-            context.redirect("/login");
-        } else {
-            model.put("error", "Error al registrar usuario");
-            context.render("/templates/registro.ftl", model);
+        if (id <= 0) {
+            return "Error al registrar usuario";
         }
+
+        return null;
+    }
+
+    private static boolean isBlank(String value) {
+        return value == null || value.isBlank();
     }
 }

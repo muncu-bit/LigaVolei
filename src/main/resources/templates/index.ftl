@@ -45,8 +45,8 @@
             </div>
             <br>
            <div>
-            <a href="/">
-                 <button class="medio">🚪 SALIR</button>
+            <a href="/logout">
+                 <button>SALIR</button>
             </a>
         </div>
     </div>
