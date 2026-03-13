@@ -39,7 +39,7 @@
             </form>
 
             <div class="link">
-                <p>Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+                <p>Ya tienes una cuenta? <a href="/">Inicia sesión</a></p>
             </div>
         </div>
     </div>

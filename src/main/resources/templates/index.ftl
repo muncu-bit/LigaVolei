@@ -42,17 +42,9 @@
                 <a href="/liga/eliminar">
                     <button class="medio">ELIMINAR LIGAS</button>
                 </a>
-
-                <h2>Gestion informacion</h2>
-
-                <a href="/editar-noticias">
-                    <button class="medio">EDITAR NOTICIAS</button>
-                </a>
-                <a href="/editar-jornadas">
-                    <button class="medio">EDITAR JORNADAS</button>
-                </a>
             </div>
-        <div>
+            <br>
+           <div>
             <a href="/">
                  <button class="medio">🚪 SALIR</button>
             </a>
