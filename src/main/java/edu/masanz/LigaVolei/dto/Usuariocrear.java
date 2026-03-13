@@ -1,9 +1,9 @@
 package edu.masanz.LigaVolei.dto;
 
 public class Usuariocrear {
-    String nombre;
-    String contrasena;
-    int id;
+    private String nombre;
+    private String contrasena;
+    private int id;
 
 
     public Usuariocrear(String nombre, String contrasena, int id) {

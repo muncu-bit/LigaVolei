@@ -1,10 +1,10 @@
 package edu.masanz.LigaVolei.dto;
 
 public class Usuario {
-    String nombre;
-    String contrasena;
-    String email;
-    int id;
+    private String nombre;
+    private String contrasena;
+    private String email;
+    private int id;
 
     public Usuario(String nombre, String contrasena, int id) {
         this.nombre = nombre;
