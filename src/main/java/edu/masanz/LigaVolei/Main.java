@@ -23,7 +23,7 @@ public class Main {
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("public");
             config.fileRenderer(new JavalinFreemarker());
-        }).start(8080);
+        }).start(7070);
 
         //Zona login
         app.get("/", LoginController::mostrarLogin);
