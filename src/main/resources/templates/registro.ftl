@@ -15,28 +15,23 @@
             <h1>Registrarse</h1>
             <form>
                 <div class="input">
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" placeholder="Federico García Lorca" required>
-                </div>
-
-                <div class="input">
                     <label for="usuario">Nombre de usuario</label>
-                    <input type="text" id="usuario" placeholder="FLorca" required>
+                    <input type="text" id="usuario" name="usuario" placeholder="FLorca" required>
                 </div>
 
                 <div class="input">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="nombre@ejemplo.com" required>
+                    <input type="email" id="email" name="email" placeholder="nombre@ejemplo.com" required>
                 </div>
 
                 <div class="input">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" placeholder="**********" required>
+                    <input type="password" id="password" name="password" placeholder="**********" required>
                 </div>
 
                 <div class="input">
                     <label for="confirm-password">Confirmar contraseña</label>
-                    <input type="password" id="confirm-password" placeholder="**********" required>
+                    <input type="password" id="confirm-password" id="confirm-password" placeholder="**********" required>
                 </div>
 
                 <button type="submit">Registro</button>

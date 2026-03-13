@@ -26,12 +26,15 @@ public class Main {
 
 
         //Zona login
-        app.get("/", LoginController::entrarIndex);
-        app.post("/", LoginController::entrarIndex);
+        app.get("/", LoginController::mostrarLogin);
+        app.post("/", LoginController::mostrarLogin);
+
+        app.get("/registro", LoginController::mostrarRegistro);
+        app.post("/registro", LoginController::registrar);
 
         //index
-        app.get("/index", LoginController::index);
-        app.post("/index", LoginController::index);
+        app.get("/index", LoginController::login);
+        app.post("/index", LoginController::login);
 
         // usuarios
         app.get("/usuarios/lista", UsuarioController::lista);
