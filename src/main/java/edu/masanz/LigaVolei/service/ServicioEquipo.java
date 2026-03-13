@@ -8,12 +8,8 @@ import java.util.List;
 public class ServicioEquipo {
 
 
-    public static long agregarEquipo(Equipo equipo) {
-        return EquipoDao.agregarEquipo(equipo);
-    }
-
-    public Equipo obtenerEquipoPorId(int idEquipo) {
-        return EquipoDao.obtenerEquipoPorId(idEquipo);
+    public static void agregarEquipo(Equipo equipo) {
+        EquipoDao.agregarEquipo(equipo);
     }
 
     public static void eliminarEquipo(int id) {

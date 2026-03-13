@@ -7,79 +7,63 @@ import edu.masanz.LigaVolei.dto.Equipo;
 import edu.masanz.LigaVolei.dto.Partido;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class ServicioPartido {
 
-    public static void jugarJornada(int ligaId) {
-
-        List<Equipo> equipos = EquipoController.servicioEquipo.obtenerEquiposPorLiga(ligaId);
-
-        // Mezclar equipos para que cada jornada sean partidos distintos
-        Collections.shuffle(equipos);
-
+    public static void generarPartidosLiga(int ligaid) {
+        List<Equipo> equipos = EquipoController.servicioEquipo.obtenerEquiposPorLiga(ligaid);
         Random random = new Random();
 
-        // Emparejar de 2 en 2
-        for (int i = 0; i < equipos.size(); i += 2) {
 
-            if (i + 1 >= equipos.size()) break; // Si hay impar, uno descansa
+        for (int i = 0; i < equipos.size(); i++) {
+            for (int j = i + 1; j < equipos.size(); j++) {
 
-            Equipo local = equipos.get(i);
-            Equipo visitante = equipos.get(i + 1);
 
-            int puntosLocal = random.nextInt(5);
-            int puntosVisitante = random.nextInt(5);
+                Equipo local = equipos.get(i);
+                Equipo visitante = equipos.get(j);
 
-            // Evitar empates
-            while (puntosLocal == puntosVisitante) {
-                puntosLocal = random.nextInt(5);
-                puntosVisitante = random.nextInt(5);
+                int puntoslocal = random.nextInt(5);
+                int puntosvisitante = random.nextInt(5);
+
+                while (puntoslocal == puntosvisitante) {
+                    puntoslocal = random.nextInt(5);
+
+                    Partido partido = new Partido(
+                            0,
+                            ligaid,
+                            local.getId(),
+                            visitante.getId(),
+                            puntoslocal,
+                            puntosvisitante
+                    );
+
+                    PartidoDao.agregarPartido(partido);
+
+                    actualizarEquipos(local, visitante, puntoslocal, puntosvisitante);
+                }
             }
-
-            Partido partido = new Partido(
-                    0,
-                    ligaId,
-                    local.getId(),
-                    visitante.getId(),
-                    puntosLocal,
-                    puntosVisitante
-            );
-
-            PartidoDao.agregarPartido(partido);
-
-            actualizarEquipos(local, visitante, puntosLocal, puntosVisitante);
-        }
-    }
-
-
-
-    public static void actualizarEquipos(Equipo local, Equipo visitante, int puntosLocal, int puntosVisitante){
-
-        // Sumar puntos anotados
-        local.setPuntos(local.getPuntos() + puntosLocal);
-        visitante.setPuntos(visitante.getPuntos() + puntosVisitante);
-
-        // Sumar puntos por victoria
-        if (puntosLocal > puntosVisitante){
-            local.setVictorias(local.getVictorias() + 1);
-            visitante.setDerrotas(visitante.getDerrotas() + 1);
-
-            // 3 puntos por victoria
-            local.setPuntos(local.getPuntos() + 3);
-
-        } else {
-            visitante.setVictorias(visitante.getVictorias() + 1);
-            local.setDerrotas(local.getDerrotas() + 1);
-
-            visitante.setPuntos(visitante.getPuntos() + 3);
         }
 
-        EquipoDao.actualizarEquipo(local);
-        EquipoDao.actualizarEquipo(visitante);
     }
+        public static void actualizarEquipos(Equipo local, Equipo visitante, int puntosLocal, int puntosVisitante){
 
+          if (puntosLocal > puntosVisitante){
+              local.setVictorias(local.getVictorias() + 1);
+              local.setPuntos(local.getPuntos() + 3);
+              visitante.setVictorias(visitante.getVictorias() + 1);
+
+          } else {
+
+              visitante.setVictorias(visitante.getVictorias() + 1);
+              local.setPuntos(local.getPuntos() + 3);
+              local.setVictorias(local.getVictorias() + 1);
+          }
+
+          EquipoDao.actualizarEquipo(local);
+          EquipoDao.actualizarEquipo(visitante);
+
+    }
 
 }

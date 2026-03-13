@@ -15,11 +15,7 @@
 
 <div class="barra-superior">
 
-<form action = "/liga/${ligaActual.id}/avanzar" method="post">
-    <button class="btn-avanzar">Avanzar jornada</button>
-</form>
 <select onchange="location=this.value">
-
 
 <#list ligas as liga>
 <option value="/liga/${liga.id}" <#if liga.id == ligaActual.id>selected</#if>>
@@ -46,9 +42,7 @@
 <#list equipos as equipo>
 
 <tr>
-<td>
-<a href="/equipos/${equipo.id}">
-${equipo.nombre}</td>
+<td>${equipo.nombre}</td>
 <td>${equipo.victorias}</td>
 <td>${equipo.derrotas}</td>
 <td>${equipo.puntos}</td>

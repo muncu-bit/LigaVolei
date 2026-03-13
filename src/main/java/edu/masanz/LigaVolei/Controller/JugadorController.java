@@ -14,50 +14,22 @@ public class JugadorController {
 public static void servicioListaPorEquipo(Context context) {
     int idequipo = Integer.parseInt(context.pathParam("id"));
     Map<String, Object> model = new HashMap<>();
-    List<Jugador> jugadores = ServicioJugador.listarJugadoresPorEquipo(idequipo);
+    List<Jugador> jugadores = ServicioJugador.listarJugadores(idequipo);
     model.put("jugadores", jugadores);
     context.render("templates/lista-jugadores", model);
 
 }
 
-    public static void servirCrearJugadores(Context ctx) {
-        int idEquipo = Integer.parseInt(ctx.pathParam("id"));
+public static void crearJugador(Context context) {
 
-        Map<String, Object> model = new HashMap<>();
-        model.put("equipoId", idEquipo);
+    String nombre = context.formParam("nombre");
+    int edad = Integer.parseInt(context.formParam("edad"));
+    String descripcion = context.formParam("descripcion");
+    int equipoid = Integer.parseInt(context.formParam("equipoid"));
 
-        ctx.render("templates/CrearJugadores.ftl", model);
-    }
-
-
-public static void crearJugadores(Context context) {
-
-
-    int equipoId = Integer.parseInt(context.formParam("equipoId"));
-
-    String[] nombres = context.formParams("nombreJugador[]").toArray(new String[0]);
-    String[] edades = context.formParams("edadJugador[]").toArray(new String[0]);
-    String[] descripciones = context.formParams("descripcionJugador[]").toArray(new String[0]);
-
-
-    for (int i = 0; i < nombres.length; i++) {
-
-        // Evitar jugadores vacíos si el usuario deja alguno sin rellenar
-        if (nombres[i] == null || nombres[i].isBlank())  continue;
-
-        Jugador jugador = new Jugador(
-                0,
-                nombres[i],
-                Integer.parseInt(edades[i]),
-                descripciones[i],
-                equipoId
-        );
-
-        ServicioJugador.agregarJugador(jugador);
-
-    }
-
-    context.redirect("/equipos/" + equipoId);
+    Jugador jugador = new Jugador(0, nombre, edad, descripcion, equipoid);
+    ServicioJugador.agregarJugador(jugador);
+    context.redirect("/lista-jugadores");
 }
 
     public static void editarJugador(Context context) {
@@ -78,8 +50,6 @@ public static void crearJugadores(Context context) {
     ServicioJugador.eliminarJugador(id);
     context.redirect("/lista-jugadores");
     }
-
-
 
 
 

@@ -50,24 +50,4 @@ public class LigaDao {
         return ligas;
     }
 
-    public static void actualizarNombreLiga(int id, String nuevoNombre) {
-        String sql = "UPDATE ligas SET nombre=? WHERE id=?";
-        Object[] params = {nuevoNombre, id};
-        ConnectionManager.ejecutarUpdateSQL(sql, params);
-    }
-
-    public static Liga obtenerLiga(int id) {
-        String sql = "Select * from ligas where id = ?";
-        Object[] params = {id};
-        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
-        if (resultado != null && resultado.length > 0) {
-            Object[] row = resultado[0];
-            return new Liga(
-                    (int) row[0],
-                    (String) row[1]
-            );
-        }
-        return null;
-    }
-
 }

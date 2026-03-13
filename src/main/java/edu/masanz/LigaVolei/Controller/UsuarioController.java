@@ -6,6 +6,7 @@ import io.javalin.http.Context;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UsuarioController {
@@ -19,8 +20,6 @@ public class UsuarioController {
         } else {
             System.out.println("Error: Usuario o contraseña incorrectos.");
         }
-
-
     }
 
     public static void EliminacionUsuario(int id) {
@@ -33,7 +32,9 @@ public class UsuarioController {
 
     public static void lista(@NotNull Context context) {
         Map<String, Object> model = new HashMap<>();
-        model.put("usuarios", ServicioUsuario.obtenerTodos());
-        context.render("/templates/lista-usuarios.ftl", model);
+        List<Usuario> usuario = ServicioUsuario.listarUsuarios();
+        model.put("usuarios", usuario);
+        context.render("templates/lista-usuarios.ftl", model);
     }
+
 }

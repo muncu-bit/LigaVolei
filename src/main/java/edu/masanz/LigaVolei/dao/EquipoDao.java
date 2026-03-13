@@ -2,12 +2,9 @@ package edu.masanz.LigaVolei.dao;
 
 import edu.masanz.LigaVolei.database.ConnectionManager;
 import edu.masanz.LigaVolei.dto.Equipo;
-import edu.masanz.LigaVolei.dto.Liga;
 
-import javax.naming.Context;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class EquipoDao {
 
@@ -17,21 +14,11 @@ public class EquipoDao {
         ConnectionManager.ejecutarInsertSQL(sql, params);
     }
 
-    public static long agregarEquipo(Equipo equipo) {
-        String sql = "INSERT INTO equipos (nombre, idliga, victorias, derrotas, puntos) VALUES (?, ?, ?, ?, ?)";
-
-        Object[] params = {
-                equipo.getNombre(),
-                equipo.getLigaid(),
-                equipo.getVictorias(),
-                equipo.getDerrotas(),
-                equipo.getPuntos()
-        };
-
-        return ConnectionManager.ejecutarInsertSQL(sql, params);
+    public static void agregarEquipo(Equipo equipo) {
+        String sql = "INSERT INTO equipos (nombre, victorias, derrotas, puntos) VALUES (?,0,0,0)";
+        Object[] params = {equipo.getNombre()};
+        ConnectionManager.ejecutarInsertSQL(sql, params);
     }
-
-
 
     public static void actualizarEquipo(Equipo equipo) {
 
@@ -41,34 +28,10 @@ public class EquipoDao {
                 equipo.getNombre(),
                 equipo.getVictorias(),
                 equipo.getDerrotas(),
-                equipo.getPuntos(),
-                equipo.getId()
+                equipo.getId(),
+                equipo.getPuntos()
         };
         ConnectionManager.ejecutarInsertSQL(sql, params);
-    }
-
-    public static Equipo obtenerEquipoPorId(int idEquipo) {
-        String sql = "select * from equipos where id = ?";
-        Object[] params = {idEquipo};
-        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
-
-        if (resultado != null && resultado.length > 0) {
-            Object[] row = resultado[0];
-
-            Equipo equipo = new Equipo(
-                    (int) row[0],   //id
-                    (String) row[1], //nombre
-                    (int) row[2],   //victorias
-                    (int) row[3],   //derrotas
-                    (int) row[4]   //puntos
-
-            );
-
-            equipo.setLigaid((int) row[5]); // lo que guarda es el Id de la liga
-
-            return equipo;
-        }
-        return null;
     }
 
 
@@ -95,26 +58,6 @@ public class EquipoDao {
         }
         return listaEquipos;
     }
-
-    public static List<Equipo> listarEquipos() {
-
-        String sql = "Select * from equipos";
-        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, null);
-
-        List<Equipo> equipos = new ArrayList<>();
-        if (resultado != null) {
-            for (Object[] row : resultado) {
-                int id = (int) row[0];
-                String nombre = (String) row[1];
-
-                equipos.add(new Equipo(id, nombre))
-                ;
-            }
-        }
-        return equipos;
-    }
-
-
 
 
 }

@@ -46,7 +46,7 @@
     </div>
 
     <div class="boton-volver">
-        <a href="/">Volver</a>
+        <a href="/">↩</a>
     </div>
 
 </div>

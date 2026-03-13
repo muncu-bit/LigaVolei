@@ -1,8 +1,9 @@
 package edu.masanz.LigaVolei;
 
 import edu.masanz.LigaVolei.Controller.*;
-
 import edu.masanz.LigaVolei.database.ConnectionManager;
+import edu.masanz.LigaVolei.service.ServicioEdicion;
+import edu.masanz.LigaVolei.service.ServicioLogin;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
 
@@ -26,70 +27,49 @@ public class Main {
 
 
         //Zona login
-        app.get("/", LoginController::entrarIndex);
-        app.post("/", LoginController::entrarIndex);
+        app.get("/", LoginController::mostrarLogin);
+        app.post("/", ServicioLogin::login);
 
-        //index
-        app.get("/index", LoginController::index);
-        app.post("/index", LoginController::index);
+        app.get("/registro", LoginController::mostrarRegistro);
+        app.post("/registro", ServicioLogin::registrar);
+
 
         // usuarios
         app.get("/usuarios/lista", UsuarioController::lista);
         app.post("/usuarios/lista", UsuarioController::lista);
+        app.get("/eliminar-usuario", ctx -> {
+            String idParam = ctx.queryParam("id");
+            if (idParam != null) {
+                int id = Integer.parseInt(idParam);
+                UsuarioController.EliminacionUsuario(id);
+            }
+            ctx.redirect("/usuarios/lista");
+        });
+
+        //ligas
+
+        app.get("/liga/crear", LigaController::servirCrearLiga); // CrearLiga
+        app.post("/liga/crear", LigaController::crearLiga);
+
+        app.get("/ligas/{id}/editar", LigaController::servirListaParaEditar);
+        app.post("/ligas/{id}/editar", LigaController::editarLiga);
+
+
+        app.get("/liga/eliminar", LigaController::servirListaParaEliminar);
+        app.post("/liga/{id}/eliminar", LigaController::eliminarLiga); // EliminarLiga
+
+        app.get("/ligas", LigaController::servirLista);// Lista todas las ligas
+        app.get("/liga/{id}", EquipoController::mostrarEquiposPorLiga); // Verliga
+
+        //equipos.ftl
+
 
         //otros
         app.get("/jornada/editar", EdicionController::jornada);
         app.get("/noticia/editar", EdicionController::noticia);
 
-
-        //ligas
-
-        app.get("/liga/crear", LigaController::servirCrearLiga);
-        app.post("/liga/crear", LigaController::crearLiga);
-
-        app.get("/ligas/editar", LigaController::mostrarLigasParaEditar);
-
-        app.get("/liga/{id}/editar", LigaController::servirEditarLiga);
-        app.post("/liga/{id}/editar", LigaController::editarLiga);
-
-
-
-
-        app.get("/liga/eliminar", LigaController::servirListaParaEliminar);
-        app.post("/ligas/{id}/eliminar", LigaController::eliminarLiga);
-
-
-        app.get("/ligas", LigaController::servirLista);
-
-
-        app.get("/liga/{id}", EquipoController::mostrarEquiposPorLiga);
-
-        //Crear Equipo
-
-        app.get("/equipos/crear", EquipoController::servirCrearEquipo);
-        app.post("/equipos/crear", EquipoController::crearEquipo);
-
-        app.get("/equipos/eliminar", EquipoController::mostrarEquiposParaEliminar);
-        app.post("/equipo/{id}/eliminar", EquipoController::eliminarEquipo);
-
-        app.get("/equipos/{id}", EquipoController::verEquipo);
-
-        //Crear jugadores (6)
-
-        app.get("/equipos/{id}/jugadores/crear", JugadorController::servirCrearJugadores);
-        app.post("/jugadores/crear", JugadorController::crearJugadores);
-
-        app.get("equipos/{id}/jugadores", JugadorController::servicioListaPorEquipo);
-        app.post("/liga/{id}/avanzar", PartidoController::avanzarJornada);
-
-
-
-
-
-
-
-
-
+        // editar noticias
+        app.post("/editar-noticia", ServicioEdicion::editarNoticia);
     }
 
 }

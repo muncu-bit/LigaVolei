@@ -10,7 +10,7 @@ public class Equipo {
     private String nombre;
     private int victorias;
     private int derrotas;
-    private int idLiga;
+    private int ligaid;
     private int puntos;
 
     private List<Jugador> jugadores = new ArrayList<>();
@@ -21,12 +21,6 @@ public class Equipo {
         this.victorias = victorias;
         this.derrotas = derrotas;
         this.puntos = puntos;
-
-    }
-
-    public Equipo(int id, String nombre) {
-        this.id = id;
-        this.nombre = nombre;
     }
 
     public void setPuntos(int puntos) {
@@ -34,11 +28,11 @@ public class Equipo {
     }
 
     public int getLigaid() {
-        return idLiga;
+        return ligaid;
     }
 
     public void setLigaid(int ligaid) {
-        this.idLiga = ligaid;
+        this.ligaid = ligaid;
     }
 
     public int getId() {

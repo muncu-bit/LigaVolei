@@ -10,17 +10,13 @@ public class UsuarioDao {
 
     public static Usuario userinicio(String nombre, String contrasena) {
 
-        String sql = "SELECT id, nombre, contraseña FROM usuarios WHERE nombre = ? AND contraseña = ?";
+        String sql = "SELECT id, usuario, contra FROM usuarios WHERE usuario = ? AND contra = ?";
         Object[] usuario = {nombre, contrasena};
         Object [][] usuarioregistrado = ConnectionManager.ejecutarSelectSQL(sql,usuario);
 
-
         if (usuarioregistrado != null && usuarioregistrado.length > 0) {
-
             int id = (int) usuarioregistrado[0][0];
-            Usuario ejemplo = new Usuario(nombre, contrasena, id);
-
-            return ejemplo;
+            return new Usuario(nombre, contrasena, id);
         }
         return null;
     }
@@ -40,16 +36,15 @@ public class UsuarioDao {
         ConnectionManager.ejecutarInsertSQL(sql,params);
     }
 
-    public static List<Usuario> obtenerTodos() {
+    public static List<Usuario> listarUsuarios() {
         List<Usuario> listaUsuarios = new ArrayList<>();
-        String sql = "SELECT  nombre FROM usuarios";
+        String sql = "SELECT id, usuario FROM usuarios";
         Object[][] resultados = ConnectionManager.ejecutarSelectSQL(sql, new Object[]{});
         if (resultados != null) {
             for (Object[] fila : resultados) {
                 int id = (int) fila[0];
                 String nombre = (String) fila[1];
-                String contra = (String) fila[2];
-                listaUsuarios.add(new Usuario(nombre, contra, id));
+                listaUsuarios.add(new Usuario(nombre, "", id));
             }
         }
 

@@ -19,7 +19,7 @@ public class ServicioJugador {
         JugadorDao.eliminarJugador(id);
     }
 
-    public static List<Jugador> listarJugadoresPorEquipo(int equipoid) {
+    public static List<Jugador> listarJugadores(int equipoid) {
         return JugadorDao.listarJugadoresPorEquipo(equipoid);
     }
 

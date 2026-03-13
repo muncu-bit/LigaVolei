@@ -22,8 +22,4 @@ public class ServicioLiga {
         return LigaDao.listarLigas();
     }
 
-    public static Liga obtenerLiga(int id) {
-        return LigaDao.obtenerLiga(id);
-    }
-
 }

@@ -8,73 +8,59 @@
 
 <body>
 
-       <div class="pagina">
-           <div class="index">
-               <h1>MENÚ</h1>
+<div class="pagina">
+    <div class="index">
+        <h1>MENÚ</h1>
 
-               <div>
-                   <h2>Gestion usuarios</h2>
+        <div>
+            <h2>Gestion usuarios</h2>
 
-                   <a href="/usuarios/lista">
-                       <button class="medio">LISTA USUARIOS</button>
-                   </a>
+            <a href="/usuarios/lista">
+                <button class="medio">LISTA USUARIOS</button>
+            </a>
 
-                   <a href="/usuarios/aceptar">
-                       <button class="medio">ACEPTAR USUARIOS</button>
-                   </a>
+            <h2>Gestion ligas</h2>
 
-                   <a href="/usuarios/eliminar">
-                       <button class="medio">ELIMINAR USUARIOS</button>
-                   </a>
+            <a href="/ligas">
+                <button class="medio">LISTA LIGAS</button>
+            </a>
 
-                   <h2>Gestion torneos</h2>
+            <a href="/liga/crear">
+                <button class="medio">CREAR LIGAS</button>
+            </a>
 
-                   <a href="/ligas">
-                       <button class="medio">LISTA LIGAS</button>
-                   </a>
+            <a href="/liga/editar">
+                <button class="medio">EDITAR LIGAS</button>
+            </a>
 
-                   <a href="/liga/crear">
-                       <button class="medio">CREAR LIGAS</button>
-                   </a>
+            <a href="/liga/eliminar">
+                <button class="medio">ELIMINAR LIGAS</button>
+            </a>
 
-                   <a href="/ligas/editar">
-                       <button class="medio">EDITAR LIGAS</button>
-                   </a>
+            <h2>Gestion informacion</h2>
 
-                   <a href="/equipos/crear">
-                       <button class="medio">CREAR EQUIPO</button>
+            <a href="/editar-noticias">
+                <button class="medio">EDITAR NOTICIAS</button>
+            </a>
 
-                    <a href="/equipos/eliminar">
-                        <button class="medio">ELIMINAR EQUIPOS</button>
-                    </a>
+            <a href="/equipos">
+                <button class="medio">EDITAR EQUIPOS</button>
+            </a>
 
-                   <a href="/liga/eliminar">
-                       <button class="medio">ELIMINAR LIGAS</button>
-                   </a>
+            <a href="/editar-jornadas">
+                <button class="medio">EDITAR JORNADAS</button>
+            </a>
+        </div>
 
-                   <h2>Gestion informacion</h2>
+        <div>
+            <a href="/">
+                 <button class="medio">🚪 SALIR</button>
+            </a>
+        </div>
 
-                   <a href="/editar-noticias">
-                       <button class="medio">EDITAR NOTICIAS</button>
-                   </a>
+    </div>
 
-                   <a href="/equipos">
-                       <button class="medio">EDITAR EQUIPOS</button>
-                   </a>
+</div>
 
-                   <a href="/editar-jornadas">
-                       <button class="medio">EDITAR JORNADAS</button>
-                   </a>
-
-               </div>
-
-               <a href="/">
-                   <button class="salir">SALIR</button>
-               </a>
-
-           </div>
-
-       </div>
-
-       </body>
+</body>
 </html>
